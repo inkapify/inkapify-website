@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Inkapify</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .header .logo {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .header .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+    .header .date {
+      font-size: 13px;
+      opacity: 0.65;
+      font-style: italic;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Intro box ── */
+    .intro-box {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #1e40af;
+    }
+
+    /* ── Sections ── */
+    .section {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      background: #2563eb;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #374151;
+      margin: 20px 0 8px;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Lists ── */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: #374151;
+      padding: 5px 0 5px 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* ── Highlight boxes ── */
+    .highlight {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 14px;
+      color: #166534;
+    }
+
+    .highlight-red {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      font-size: 14px;
+      color: #991b1b;
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: #1e3a8a;
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-box .num {
+      background: rgba(255,255,255,0.2);
+      font-size: 12px;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-box p {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+
+    .contact-box a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .contact-label {
+      opacity: 0.65;
+      min-width: 60px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .section { padding: 20px 18px; }
+      .contact-box { padding: 20px 18px; }
+      .container { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Inkapify</div>
+    <div class="subtitle">Privacy Policy</div>
+    <div class="date">Effective Date: March 13, 2026</div>
+  </div>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="intro-box">
+      Your privacy matters to us. This policy explains exactly what data Inkapify
+      collects, how it is used, and how it is protected. We do not sell your data.
+      We do not share it with advertisers.
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <div class="section">
+      <h2><span class="num">1</span> Information We Collect</h2>
+
+      <h3>Information You Provide</h3>
+      <ul>
+        <li>Account details: name, email address, and password when you register</li>
+        <li>Financial data: income, expenses, transactions, budgets, goals, and debt records you enter</li>
+        <li>Categories and tags you create to organize your transactions</li>
+        <li>Recurring rules, reminders, and bill schedules you configure</li>
+        <li>Profile preferences and app settings</li>
+      </ul>
+
+      <h3>Information Collected Automatically</h3>
+      <ul>
+        <li>Device information: device type, operating system version, unique device identifiers</li>
+        <li>App usage data: features used, screens visited, session duration</li>
+        <li>Crash reports and error logs to help us improve the app</li>
+        <li>Push notification tokens (only to deliver reminders you request)</li>
+      </ul>
+
+      <h3>Inka AI Conversation Data</h3>
+      <ul>
+        <li>Questions you ask Inka AI and Finn's responses (session-only — deleted when you close the screen)</li>
+        <li>Aggregated financial summaries sent to Anthropic's API to generate Finn's responses (see Section 4A)</li>
+        <li>A count of Inka AI questions used per month (for usage limit enforcement)</li>
+      </ul>
+
+      <h3>What We Do NOT Collect</h3>
+      <div class="highlight">
+        ✓ &nbsp;We do not connect to your bank accounts or financial institutions<br/>
+        ✓ &nbsp;We do not collect payment card numbers or banking credentials<br/>
+        ✓ &nbsp;We do not access your contacts, camera, or microphone<br/>
+        ✓ &nbsp;We do not collect your GPS location<br/>
+        ✓ &nbsp;We do not send raw transactions, account numbers, or personal identifiers to AI services
+      </div>
+    </div>
+
+    <!-- 2. How We Use Your Information -->
+    <div class="section">
+      <h2><span class="num">2</span> How We Use Your Information</h2>
+      <p>We use the information we collect only to:</p>
+      <ul>
+        <li>Provide, operate, and maintain the Inkapify app and its features</li>
+        <li>Sync your financial data securely across your devices</li>
+        <li>Send push notifications for reminders and alerts you have configured</li>
+        <li>Respond to your support requests and resolve technical issues</li>
+        <li>Improve app performance, stability, and user experience</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+      <div class="highlight">
+        ✓ &nbsp;We do not sell your personal information to third parties.<br/>
+        ✓ &nbsp;We do not use your financial data for advertising purposes.
+      </div>
+    </div>
+
+    <!-- 3. Data Storage & Security -->
+    <div class="section">
+      <h2><span class="num">3</span> Data Storage &amp; Security</h2>
+      <p>
+        Your data is stored securely using Supabase, a trusted cloud infrastructure
+        provider. All data is encrypted in transit using TLS/SSL and encrypted
+        at rest using AES-256.
+      </p>
+      <p>Our security measures include:</p>
+      <ul>
+        <li>Row-level security policies — you can only ever access your own data</li>
+        <li>Encrypted database connections for all communications</li>
+        <li>Secure authentication with hashed passwords (never stored in plain text)</li>
+        <li>Regular security monitoring and updates</li>
+      </ul>
+      <p>
+        While we implement strong security measures, no method of electronic
+        storage or transmission is 100% secure. We are committed to protecting
+        your data to the best of our ability.
+      </p>
+    </div>
+
+    <!-- 4. Data Sharing -->
+    <div class="section">
+      <h2><span class="num">4</span> Data Sharing &amp; Third Parties</h2>
+      <p>
+        We do not sell, trade, or rent your personal information. We share
+        limited data only with the following trusted service providers that
+        are necessary to run the app:
+      </p>
+
+      <h3>Service Providers</h3>
+      <ul>
+        <li><strong>Supabase</strong> — database hosting and authentication. Your data is stored on their servers under strict security controls.</li>
+        <li><strong>Expo / EAS</strong> — app build and over-the-air update delivery infrastructure.</li>
+        <li><strong>Anthropic</strong> — AI processing for the Inka AI assistant feature. See Section 4A below for full details on what data is shared with Anthropic.</li>
+        <li><strong>RevenueCat</strong> — subscription management and in-app purchase processing. Only your anonymous user ID and subscription status are shared.</li>
+      </ul>
+
+      <h3>Legal Requirements</h3>
+      <p>
+        We may disclose your information if required by law or in response to
+        valid requests by public authorities such as a court order.
+      </p>
+
+      <h3>Business Transfers</h3>
+      <p>
+        If Inkapify is involved in a merger, acquisition, or asset sale, your
+        information may be transferred. We will provide notice before your
+        data is transferred and subject to a different privacy policy.
+      </p>
+    </div>
+
+    <!-- 4A. Inka AI -->
+    <div class="section" id="finn-ai">
+      <h2><span class="num">4A</span> Inka AI — How Your Data Is Used</h2>
+      <p>
+        Inkapify includes an AI-powered assistant called Finn, powered by
+        Anthropic's Claude API. This section explains exactly what data
+        is shared with Anthropic when you use Inka AI.
+      </p>
+
+      <h3>What We Send to Anthropic</h3>
+      <p>
+        When you ask Finn a question, we send only aggregated, anonymized
+        financial summaries — never your raw data or personal identifiers.
+        Specifically, we send:
+      </p>
+      <div class="highlight">
+        ✓ &nbsp;Total income and expenses for the current month (single numbers only)<br/>
+        ✓ &nbsp;Top spending categories by name and total amount<br/>
+        ✓ &nbsp;Budget names, percentage used, and remaining amount<br/>
+        ✓ &nbsp;Count and total value of upcoming bills (no bill names)<br/>
+        ✓ &nbsp;Investment portfolio total value only (no institution names)<br/>
+        ✓ &nbsp;Total loan and fixed deposit values (no account numbers)<br/>
+        ✓ &nbsp;Goal and debt summary counts (no goal or person names)<br/>
+        ✓ &nbsp;Your question and the last 8 messages of the conversation
+      </div>
+
+      <h3>What We Never Send to Anthropic</h3>
+      <div class="highlight-red">
+        ✗ &nbsp;Your name, email address, or any personal identifiers<br/>
+        ✗ &nbsp;Raw transaction records, notes, or receipt images<br/>
+        ✗ &nbsp;Account names, numbers, or institution names<br/>
+        ✗ &nbsp;Loan lender names or account numbers<br/>
+        ✗ &nbsp;Bank names, FD account numbers<br/>
+        ✗ &nbsp;Payee names, debt person names, or nominees<br/>
+        ✗ &nbsp;Goal names, investment names, or any descriptive labels<br/>
+        ✗ &nbsp;Any internal IDs or unique identifiers
+      </div>
+
+      <h3>Conversation Storage</h3>
+      <p>
+        Inka AI conversations are <strong>session-only</strong>. Your conversation
+        is temporarily stored in our database while the Finn screen is open so
+        that an interrupted session can be resumed. When you close the Finn
+        screen, your conversation is permanently deleted from our servers.
+        Conversations do not persist between sessions.
+      </p>
+
+      <h3>Usage Limits</h3>
+      <p>
+        To manage service costs and ensure fair access, Inka AI questions are
+        subject to monthly usage limits based on your subscription tier.
+        Your usage count is tracked server-side in our database.
+      </p>
+
+      <h3>Anthropic's Data Practices</h3>
+      <p>
+        Anthropic may process the aggregated summaries we send in accordance
+        with their privacy policy. We have configured our API usage to opt
+        out of Anthropic using our data for model training where this option
+        is available. For full details on how Anthropic handles data, see
+        <a href="https://www.anthropic.com/privacy" style="color:#2563eb;" target="_blank">anthropic.com/privacy</a>.
+      </p>
+
+      <h3>Opting Out of Inka AI</h3>
+      <p>
+        Inka AI is an optional feature. If you prefer not to use it, simply
+        do not open the Inka AI screen. Your financial data is never sent
+        to Anthropic unless you actively ask Finn a question.
+      </p>
+    </div>
+
+    <!-- 5. Data Retention -->
+    <div class="section">
+      <h2><span class="num">5</span> Data Retention</h2>
+      <ul>
+        <li>Your financial records are retained while your account is active</li>
+        <li>Deleted records are removed from your visible data immediately</li>
+        <li>Inka AI conversations are deleted immediately when you close the Finn screen</li>
+        <li>Inka AI usage counts (question log) are retained for up to 13 months for monthly limit calculations, then deleted</li>
+        <li>When you delete your account, all personal data including AI usage logs is permanently deleted from our servers within 30 days</li>
+        <li>Anonymized, aggregated usage statistics may be retained as they cannot be linked back to you</li>
+      </ul>
+    </div>
+
+    <!-- 6. Your Rights -->
+    <div class="section">
+      <h2><span class="num">6</span> Your Rights &amp; Choices</h2>
+      <ul>
+        <li><strong>Access</strong> — view all your financial data within the app at any time</li>
+        <li><strong>Correction</strong> — edit or update any information you have entered</li>
+        <li><strong>Deletion</strong> — delete individual records, or delete your entire account and all associated data</li>
+        <li><strong>Export</strong> — export your transaction data from within the app</li>
+        <li><strong>Notifications</strong> — enable or disable push notifications in your device settings or within the app</li>
+      </ul>
+      <p>
+        To exercise any of these rights or to request account deletion,
+        contact us at inkapify@gmail.com.
+      </p>
+    </div>
+
+    <!-- 7. Push Notifications -->
+    <div class="section">
+      <h2><span class="num">7</span> Push Notifications</h2>
+      <p>Inkapify may send you push notifications for:</p>
+      <ul>
+        <li>Bill payment reminders you have set up</li>
+        <li>Budget threshold alerts you have configured</li>
+        <li>Recurring transaction reminders</li>
+        <li>Goal milestone updates</li>
+      </ul>
+      <p>
+        You can disable push notifications at any time through your device
+        settings (Settings → Notifications → Inkapify) or within the app
+        under Profile → Notifications.
+      </p>
+    </div>
+
+    <!-- 8. Children's Privacy -->
+    <div class="section">
+      <h2><span class="num">8</span> Children's Privacy</h2>
+      <p>
+        Inkapify is not intended for use by children under the age of 13.
+        We do not knowingly collect personal information from children
+        under 13. If you believe your child has provided us with personal
+        information, please contact us at
+        inkapify@gmail.com
+        and we will delete it promptly.
+      </p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="section">
+      <h2><span class="num">9</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by:</p>
+      <ul>
+        <li>Posting the updated policy at inkapify.com/privacy</li>
+        <li>Updating the Effective Date at the top of this page</li>
+        <li>Sending a push notification or in-app notice for material changes</li>
+      </ul>
+      <p>
+        Your continued use of Inkapify after the effective date of the revised
+        policy constitutes your acceptance of the changes.
+      </p>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="contact-box">
+      <h2><span class="num">10</span> Contact Us</h2>
+      <p>
+        Questions, concerns, or requests about this Privacy Policy or
+        your personal data? We're here to help.
+      </p>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        inkapify@gmail.com
+      </div>
+      <div class="contact-item">
+        <span class="contac
