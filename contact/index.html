@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Inkapify</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   Helvetica, Arial, sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .header .logo { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px; }
+    .header .subtitle { font-size: 18px; font-weight: 400; opacity: 0.85; margin-bottom: 12px; }
+    .header .tagline { font-size: 14px; opacity: 0.65; }
+
+    .container { max-width: 620px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .intro-box {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 32px;
+      font-size: 15px;
+      color: #1e40af;
+    }
+
+    .response-note {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #166534;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .topics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .topic-btn {
+      display: block;
+      padding: 14px 16px;
+      background: #f8faff;
+      border: 1.5px solid #dbeafe;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    }
+
+    .topic-btn:hover {
+      background: #eff6ff;
+      border-color: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .topic-btn .topic-icon { font-size: 20px; margin-bottom: 6px; display: block; }
+    .topic-btn .topic-title { font-size: 14px; font-weight: 600; color: #1e3a8a; display: block; margin-bottom: 2px; }
+    .topic-btn .topic-desc { font-size: 12px; color: #6b7280; display: block; line-height: 1.4; }
+
+    .btn-contact {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #fff;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn-contact:hover { opacity: 0.92; transform: translateY(-1px); }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a { font-size: 13px; color: #2563eb; text-decoration: none; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #9ca3af;
+      padding-top: 20px;
+      margin-top: 32px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 500px) {
+      .card { padding: 20px 18px; }
+      .topics { grid-template-columns: 1fr; }
+      .container { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Inkapify</div>
+    <div class="subtitle">Contact Us</div>
+    <div class="tagline">We usually respond within 24 hours</div>
+  </div>
+
+  <div class="container">
+
+    <div class="intro-box">
+      Have a question, need help with the app, or want to make a privacy
+      request? Choose a topic below — your email app will open with
+      everything pre-filled. No forms, no accounts needed.
+    </div>
+
+    <div class="response-note">
+      ⏱ We typically respond within 24 hours on business days.
+    </div>
+
+    <div class="card">
+      <h2>📬 What can we help with?</h2>
+      <p>Tap a topic to open your email app with a pre-filled message ready to send.</p>
+
+      <div class="topics">
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20General%20Question&body=Hi%20Inkapify%20team%2C%0A%0AI%20have%20a%20question%20about%3A%0A%0A%5BDescribe%20your%20question%20here%5D%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">💬</span>
+          <span class="topic-title">General Question</span>
+          <span class="topic-desc">App features, how-to, or general help</span>
+        </a>
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20Bug%20Report&body=Hi%20Inkapify%20team%2C%0A%0AI%20found%20a%20bug%3A%0A%0AWhat%20happened%3A%0A%5BDescribe%20the%20bug%5D%0A%0ASteps%20to%20reproduce%3A%0A1.%20%0A2.%20%0A3.%20%0A%0ADevice%3A%20%5BYour%20phone%20model%5D%0AAndroid%20version%3A%20%5BVersion%5D%0AApp%20version%3A%20%5BVersion%5D%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">🐛</span>
+          <span class="topic-title">Bug Report</span>
+          <span class="topic-desc">Something isn't working correctly</span>
+        </a>
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20Feature%20Request&body=Hi%20Inkapify%20team%2C%0A%0AI%20would%20love%20to%20see%20this%20feature%3A%0A%0A%5BDescribe%20your%20feature%20idea%5D%0A%0AWhy%20it%20would%20be%20useful%3A%0A%5BExplain%20the%20use%20case%5D%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">💡</span>
+          <span class="topic-title">Feature Request</span>
+          <span class="topic-desc">Suggest something new for the app</span>
+        </a>
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20Privacy%20Request&body=Hi%20Inkapify%20team%2C%0A%0AI%20am%20making%20the%20following%20privacy%20request%3A%0A%0ARequest%20type%3A%20%5BData%20access%20%2F%20Data%20deletion%20%2F%20Data%20export%20%2F%20Other%5D%0A%0AAccount%20email%3A%20%5BYour%20registered%20email%20address%5D%0A%0ADetails%3A%0A%5BAny%20additional%20details%5D%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">🔒</span>
+          <span class="topic-title">Privacy Request</span>
+          <span class="topic-desc">Data access, deletion, or export</span>
+        </a>
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20Account%20Deletion%20Request&body=Hi%20Inkapify%20team%2C%0A%0AI%20would%20like%20to%20permanently%20delete%20my%20Inkapify%20account.%0A%0AAccount%20email%3A%20%5BYour%20registered%20email%20address%5D%0A%0AI%20understand%20that%20all%20my%20data%20will%20be%20permanently%20deleted%20within%2030%20days%20and%20this%20action%20cannot%20be%20undone.%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">🗑️</span>
+          <span class="topic-title">Delete Account</span>
+          <span class="topic-desc">Request permanent account deletion</span>
+        </a>
+
+        <a class="topic-btn"
+           href="mailto:support@inkapify.com?subject=Inkapify%20%E2%80%94%20Other&body=Hi%20Inkapify%20team%2C%0A%0A%5BYour%20message%20here%5D%0A%0AThanks%2C%0A%5BYour%20name%5D">
+          <span class="topic-icon">📝</span>
+          <span class="topic-title">Other</span>
+          <span class="topic-desc">Anything else on your mind</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>✉️ Prefer to write directly?</h2>
+      <p>
+        You can also open your email app directly and write to us.
+        We read every message personally.
+      </p>
+      <a class="btn-contact"
+         href="mailto:support@inkapify.com?subject=Inkapify%20Support&body=Hi%20Inkapify%20team%2C%0A%0A">
+        Open Email App →
+      </a>
+    </div>
+
+    <div class="nav-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms &amp; Conditions</a>
+      <a href="https://inkapify.app">Download App</a>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Inkapify. All rights reserved.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
