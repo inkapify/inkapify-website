@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us — Inkapify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d;--navy2:#162845;--blue:#2563eb;--blue2:#1d4ed8;
+  --blue-light:#eff6ff;--green:#16a34a;--green-light:#f0fdf4;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --border:#e2e8f0;--border2:#cbd5e1;--off:#f8f9fc;--white:#ffffff;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);line-height:1.7;font-size:16px}
+
+/* ── NAV ── */
+nav{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:14px;color:var(--text2);text-decoration:none;transition:color .18s}
+.nav-link:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:#fff;padding:8px 18px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:500;transition:all .18s}
+.nav-cta:hover{background:var(--navy2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);padding:64px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.hero-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:12px;position:relative;z-index:1}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.6);position:relative;z-index:1}
+
+/* ── WRAP ── */
+.wrap{max-width:640px;margin:0 auto;padding:52px 24px 80px}
+
+/* ── INTRO ── */
+.intro{background:var(--blue-light);border:1px solid rgba(37,99,235,.2);border-left:4px solid var(--blue);border-radius:0 14px 14px 0;padding:18px 22px;margin-bottom:24px;font-size:15px;color:#1e40af;line-height:1.65}
+
+/* ── RESPONSE NOTE ── */
+.response-note{background:var(--green-light);border:1px solid rgba(22,163,74,.2);border-radius:12px;padding:12px 18px;font-size:14px;color:#166534;text-align:center;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* ── CARD ── */
+.card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px 36px;margin-bottom:20px;box-shadow:var(--shadow)}
+.card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.3px}
+.card p{font-size:15px;color:var(--text2);margin-bottom:22px;line-height:1.7}
+
+/* ── TOPICS GRID ── */
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.topic-btn{display:block;padding:18px 16px;background:var(--off);border:1.5px solid var(--border);border-radius:14px;text-decoration:none;transition:all .18s;cursor:pointer}
+.topic-btn:hover{background:var(--blue-light);border-color:rgba(37,99,235,.35);transform:translateY(-2px);box-shadow:var(--shadow)}
+.topic-icon{font-size:22px;margin-bottom:8px;display:block}
+.topic-title{font-size:14px;font-weight:500;color:var(--navy);display:block;margin-bottom:3px}
+.topic-desc{font-size:12px;color:var(--text3);display:block;line-height:1.45}
+
+/* ── DIRECT EMAIL CARD ── */
+.email-card{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);border-radius:18px;padding:32px 36px;margin-bottom:20px;text-align:center}
+.email-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
+.email-card p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:22px;line-height:1.65}
+.btn-email{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);padding:13px 28px;border-radius:12px;text-decoration:none;font-size:15px;font-weight:500;transition:all .2s}
+.btn-email:hover{background:var(--blue-light);color:var(--blue);transform:translateY(-1px)}
+.email-note{font-size:12px;color:rgba(255,255,255,.45);margin-top:14px}
+
+/* ── INFO CARD ── */
+.info-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px 36px;margin-bottom:20px;box-shadow:var(--shadow)}
+.info-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+.info-row:last-child{border-bottom:none;padding-bottom:0}
+.info-icon{width:36px;height:36px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-label{font-size:12px;color:var(--text3);margin-bottom:2px;font-weight:500;letter-spacing:.02em}
+.info-value{font-size:14px;color:var(--text);font-weight:400}
+.info-value a{color:var(--blue);text-decoration:none}
+.info-value a:hover{text-decoration:underline}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);background:var(--white);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color .18s}
+.foot-links a:hover{color:var(--text2)}
+.foot-copy{font-size:12px;color:var(--text3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  nav{padding:0 20px}
+  .hero{padding:52px 20px 60px}
+  .wrap{padding:36px 16px 60px}
+  .card,.email-card,.info-card{padding:24px 20px}
+  .topics{grid-template-columns:1fr}
+  footer{padding:24px 20px;flex-direction:column;text-align:center}
+  .foot-links{justify-content:center}
+  .nav-right .nav-link{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span>
+  </a>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/privacy" class="nav-link">Privacy</a>
+    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="nav-cta">Download Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </div>
+  <h1>Contact Us</h1>
+  <p class="hero-sub">We're here to help · Usually respond within 24 hours</p>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    Have a question, need help, or want to make a privacy request? Choose a topic below — your email app will open with everything pre-filled. No forms, no accounts needed.
+  </div>
+
+  <div class="response-note">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    We typically respond within 24 hours on business days
+  </div>
+
+  <!-- TOPICS -->
+  <div class="card">
+    <h2>What can we help with?</h2>
+    <p>Tap a topic to open your email app with a pre-filled message ready to send.</p>
+    <div class="topics">
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=General%20Question%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%20have%20a%20question%20about%3A%0A%0A%5BDescribe%20your%20question%20here%5D%0A%0AThanks">
+        <span class="topic-icon">💬</span>
+        <span class="topic-title">General Question</span>
+        <span class="topic-desc">App features, how-to, or general help</span>
+      </a>
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=Bug%20Report%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%20found%20a%20bug%20I%27d%20like%20to%20report.%0A%0AWhat%20happened%3A%0A%5BDescribe%20the%20issue%5D%0A%0ASteps%20to%20reproduce%3A%0A1.%20%0A2.%20%0A3.%20%0A%0ADevice%2FOS%3A%20%5BYour%20device%20and%20Android%20version%5D%0A%0AThanks">
+        <span class="topic-icon">🐛</span>
+        <span class="topic-title">Bug Report</span>
+        <span class="topic-desc">Something isn't working correctly</span>
+      </a>
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=Feature%20Request%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%27d%20love%20to%20suggest%20a%20new%20feature%3A%0A%0A%5BDescribe%20your%20feature%20idea%5D%0A%0AWhy%20it%20would%20be%20useful%3A%0A%5BExplain%20the%20use%20case%5D%0A%0AThanks">
+        <span class="topic-icon">💡</span>
+        <span class="topic-title">Feature Request</span>
+        <span class="topic-desc">Suggest something new for the app</span>
+      </a>
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=Privacy%20Request%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%27m%20making%20a%20privacy%20request%3A%0A%0AType%20of%20request%3A%20%5BData%20access%20%2F%20Data%20deletion%20%2F%20Data%20export%20%2F%20Other%5D%0A%0ADetails%3A%0A%5BDescribe%20your%20request%5D%0A%0AAccount%20email%3A%20%5BYour%20registered%20email%5D%0A%0AThanks">
+        <span class="topic-icon">🔒</span>
+        <span class="topic-title">Privacy Request</span>
+        <span class="topic-desc">Data access, deletion, or export</span>
+      </a>
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=Account%20Deletion%20Request%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%20would%20like%20to%20request%20deletion%20of%20my%20account%20and%20all%20associated%20data.%0A%0AAccount%20email%3A%20%5BYour%20registered%20email%5D%0A%0AI%20understand%20this%20action%20is%20permanent%20and%20cannot%20be%20undone.%0A%0AThanks">
+        <span class="topic-icon">🗑️</span>
+        <span class="topic-title">Delete Account</span>
+        <span class="topic-desc">Request permanent account deletion</span>
+      </a>
+
+      <a class="topic-btn" href="mailto:support@inkapify.com?subject=Subscription%20Help%20%E2%80%94%20Inkapify&body=Hi%20Inkapify%20team%2C%0A%0AI%20need%20help%20with%20my%20subscription%3A%0A%0A%5BDescribe%20your%20subscription%20issue%5D%0A%0AAccount%20email%3A%20%5BYour%20registered%20email%5D%0A%0AThanks">
+        <span class="topic-icon">💳</span>
+        <span class="topic-title">Subscription Help</span>
+        <span class="topic-desc">Pro plan, billing, or upgrade issues</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- DIRECT EMAIL -->
+  <div class="email-card">
+    <h2>Prefer to write directly?</h2>
+    <p>Drop us an email anytime. We read every message personally.</p>
+    <a href="mailto:support@inkapify.com" class="btn-email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      support@inkapify.com
+    </a>
+    <p class="email-note">No tracking · No auto-responders · A real person reads every email</p>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-card">
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div>
+        <div class="info-label">Support Email</div>
+        <div class="info-value"><a href="mailto:support@inkapify.com">support@inkapify.com</a></div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="info-label">Response Time</div>
+        <div class="info-value">Within 24 hours on business days</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <div class="info-label">Website</div>
+        <div class="info-value"><a href="https://inkapify.com">inkapify.com</a></div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="info-label">Privacy Policy</div>
+        <div class="info-value"><a href="/privacy">inkapify.com/privacy</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="foot-logo">
+    <span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span>
+  </a>
+  <div class="foot-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate">Support us</a>
+  </div>
+  <div class="foot-copy">© 2026 Inkapify. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
