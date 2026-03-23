@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Terms &amp; Conditions — Inkapify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d;--navy2:#162845;--blue:#2563eb;--blue2:#1d4ed8;
+  --blue-light:#eff6ff;--green:#16a34a;--green-light:#f0fdf4;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --border:#e2e8f0;--border2:#cbd5e1;--off:#f8f9fc;--white:#ffffff;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);line-height:1.7;font-size:16px}
+
+/* ── NAV ── */
+nav{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:14px;color:var(--text2);text-decoration:none;transition:color .18s}
+.nav-link:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:#fff;padding:8px 18px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:500;transition:all .18s}
+.nav-cta:hover{background:var(--navy2);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);padding:64px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.hero-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:12px;position:relative;z-index:1}
+.hero-date{font-size:14px;color:rgba(255,255,255,.55);position:relative;z-index:1}
+
+/* ── CONTAINER ── */
+.wrap{max-width:800px;margin:0 auto;padding:52px 24px 80px}
+
+/* ── INTRO BOX ── */
+.intro{background:var(--blue-light);border:1px solid rgba(37,99,235,.2);border-left:4px solid var(--blue);border-radius:0 14px 14px 0;padding:18px 22px;margin-bottom:36px;font-size:15px;color:#1e40af;line-height:1.65}
+
+/* ── TOC ── */
+.toc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:22px 26px;margin-bottom:36px;box-shadow:var(--shadow)}
+.toc-label{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.toc-links{display:flex;flex-wrap:wrap;gap:8px}
+.toc-links a{font-size:13px;color:var(--blue);text-decoration:none;background:var(--blue-light);padding:4px 12px;border-radius:20px;border:1px solid rgba(37,99,235,.2);transition:background .18s}
+.toc-links a:hover{background:#dbeafe}
+
+/* ── SECTION ── */
+.section{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px 36px;margin-bottom:20px;box-shadow:var(--shadow)}
+.section h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin-bottom:16px;letter-spacing:-.3px;display:flex;align-items:center;gap:12px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:var(--blue-light);color:var(--blue);font-size:13px;font-weight:700;flex-shrink:0;font-family:'DM Sans',sans-serif}
+.section h3{font-size:15px;font-weight:500;color:var(--navy);margin:20px 0 10px}
+.section h3:first-of-type{margin-top:16px}
+.section p{font-size:15px;color:var(--text2);margin-bottom:12px;line-height:1.75}
+.section p:last-child{margin-bottom:0}
+.section ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.section ul li{font-size:14px;color:var(--text2);padding-left:22px;position:relative;line-height:1.65}
+.section ul li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--blue);opacity:.5}
+.section a{color:var(--blue);text-decoration:none}
+.section a:hover{text-decoration:underline}
+
+/* ── HIGHLIGHT BOXES ── */
+.hl-warn{background:#fefce8;border:1px solid rgba(202,138,4,.25);border-radius:12px;padding:16px 20px;font-size:14px;color:#854d0e;line-height:1.7;margin:14px 0}
+.hl-blue{background:var(--blue-light);border:1px solid rgba(37,99,235,.2);border-radius:12px;padding:16px 20px;font-size:14px;color:#1e40af;line-height:1.7;margin:14px 0}
+.hl-green{background:var(--green-light);border:1px solid rgba(22,163,74,.2);border-radius:12px;padding:16px 20px;font-size:14px;color:#166534;line-height:1.7;margin:14px 0}
+
+/* ── CONTACT BOX ── */
+.contact-box{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);border-radius:18px;padding:32px 36px;margin-bottom:20px}
+.contact-box h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:12px;letter-spacing:-.3px}
+.contact-box .num{background:rgba(255,255,255,.15);color:#fff}
+.contact-box p{font-size:15px;color:rgba(255,255,255,.75);margin-bottom:16px}
+.contact-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:14px}
+.contact-label{color:rgba(255,255,255,.5);min-width:64px;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.contact-row a{color:#93c5fd;text-decoration:none}
+.contact-row a:hover{text-decoration:underline}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);background:var(--white);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color .18s}
+.foot-links a:hover{color:var(--text2)}
+.foot-copy{font-size:12px;color:var(--text3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  nav{padding:0 20px}
+  .hero{padding:52px 20px 60px}
+  .wrap{padding:36px 16px 60px}
+  .section,.contact-box{padding:24px 20px}
+  footer{padding:24px 20px;flex-direction:column;text-align:center}
+  .foot-links{justify-content:center}
+  .nav-right .nav-link{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo"><span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span></a>
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/contact" class="nav-link">Contact</a>
+    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="nav-cta">Download Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+  </div>
+  <h1>Terms &amp; Conditions</h1>
+  <div class="hero-date">Effective Date: March 21, 2026 &nbsp;·&nbsp; <span style="color:#2563eb">Inka</span>pify v1.0</div>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    Please read these Terms &amp; Conditions carefully before using <span style="color:#2563eb">Inka</span>pify. By downloading or using the app, you agree to be bound by these terms. If you do not agree, please do not use the app.
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-label">Quick Navigation</div>
+    <div class="toc-links">
+      <a href="#acceptance">1. Acceptance</a>
+      <a href="#description">2. The App</a>
+      <a href="#accounts">3. Accounts</a>
+      <a href="#use">4. Acceptable Use</a>
+      <a href="#inka-ai">4A. Inka AI</a>
+      <a href="#subscriptions">5. Subscriptions</a>
+      <a href="#donations">6. Donations</a>
+      <a href="#data">7. Your Data</a>
+      <a href="#disclaimer">8. Disclaimer</a>
+      <a href="#liability">9. Liability</a>
+      <a href="#termination">10. Termination</a>
+      <a href="#ip">11. Intellectual Property</a>
+      <a href="#changes">12. Changes</a>
+      <a href="#contact">13. Contact</a>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="acceptance">
+    <h2><span class="num">1</span> Acceptance of Terms</h2>
+    <p>By downloading, installing, or using the <span style="color:#2563eb">Inka</span>pify mobile application ("App"), you confirm that you are at least 13 years of age, have read and understood these Terms &amp; Conditions ("Terms"), and agree to be legally bound by them.</p>
+    <p>If you are using the App on behalf of an organisation, you represent that you have the authority to bind that organisation to these Terms.</p>
+    <div class="hl-warn">⚠️ &nbsp;If you do not agree to these Terms, you must immediately stop using the App and delete it from your device.</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section" id="description">
+    <h2><span class="num">2</span> Description of the App</h2>
+    <p><span style="color:#2563eb">Inka</span>pify is a personal finance tracking application that allows users to manually record and organise their income, expenses, transfers, budgets, goals, debts, recurring transactions, and investments. The app includes an optional AI-powered assistant called Inka, which answers questions about your personal financial data using aggregated summaries.</p>
+    <div class="hl-warn">⚠️ &nbsp;<strong><span style="color:#2563eb">Inka</span>pify is a manual tracking tool only.</strong> The App does not connect to bank accounts, financial institutions, or payment systems. All data is entered by you manually. <span style="color:#2563eb">Inka</span>pify does not provide financial advice, investment advice, tax advice, or any professional financial services.</div>
+    <p>Any financial insights or summaries generated by the App, including those generated by the Inka AI assistant, are for informational and organisational purposes only. Inka AI responses are generated by an AI model and may not always be accurate. Always consult a qualified financial professional for financial decisions.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="section" id="accounts">
+    <h2><span class="num">3</span> User Accounts</h2>
+
+    <h3>Registration</h3>
+    <p>You must create an account to use <span style="color:#2563eb">Inka</span>pify. You agree to provide accurate, current, and complete information during registration and to keep your account information updated.</p>
+
+    <h3>Account Security</h3>
+    <ul>
+      <li>You are responsible for maintaining the confidentiality of your password</li>
+      <li>You are responsible for all activity that occurs under your account</li>
+      <li>You must notify us immediately via our <a href="https://inkapify.com/contact">Contact page</a> if you suspect unauthorised access</li>
+      <li>We recommend enabling App Lock (PIN or biometric) for additional security</li>
+    </ul>
+
+    <h3>One Account Per Person</h3>
+    <p>Each account is for a single individual. You may not share your account with others or create accounts on behalf of others without their knowledge and consent.</p>
+
+    <h3>Account Deletion</h3>
+    <p>You may delete your account at any time from within the App under Profile → Settings → Delete Account. Upon deletion, all your personal data will be permanently removed from our servers within 30 days.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="section" id="use">
+    <h2><span class="num">4</span> Acceptable Use</h2>
+    <p>You agree to use <span style="color:#2563eb">Inka</span>pify only for lawful, personal finance tracking purposes. You agree NOT to:</p>
+    <ul>
+      <li>Use the App for any illegal purpose or in violation of any applicable laws</li>
+      <li>Attempt to gain unauthorised access to any part of the App or its infrastructure</li>
+      <li>Reverse engineer, decompile, or disassemble any part of the App</li>
+      <li>Use automated tools, bots, or scripts to access or interact with the App</li>
+      <li>Transmit any viruses, malware, or other harmful code through the App</li>
+      <li>Impersonate any person or entity or misrepresent your affiliation</li>
+      <li>Attempt to probe, scan, or test the vulnerability of our systems</li>
+      <li>Attempt to manipulate, jailbreak, or abuse the Inka AI assistant</li>
+      <li>Circumvent Inka AI usage limits through any technical or non-technical means</li>
+      <li>Circumvent subscription or feature gating through any means</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate your account immediately if we determine, in our sole discretion, that you have violated these acceptable use terms.</p>
+  </div>
+
+  <!-- 4A -->
+  <div class="section" id="inka-ai">
+    <h2><span class="num">4A</span> Inka AI Terms of Use</h2>
+    <p>The Inka AI assistant is powered by Anthropic's Claude API. By using Inka AI, you agree to the following:</p>
+
+    <h3>Scope of Use</h3>
+    <ul>
+      <li>Inka AI is designed exclusively for personal finance queries related to your own data</li>
+      <li>Do not use Inka AI to attempt to generate content outside personal finance topics</li>
+      <li>Inka AI responses are informational only and do not constitute financial advice</li>
+    </ul>
+
+    <h3>No Reliance on AI Responses</h3>
+    <div class="hl-warn">⚠️ &nbsp;AI-generated responses may be inaccurate, incomplete, or outdated. Do not make financial decisions based solely on Inka AI responses. Always verify important financial information and consult a qualified professional.</div>
+
+    <h3>Usage Limits</h3>
+    <ul>
+      <li><strong>Free plan:</strong> 15 questions per month</li>
+      <li><strong>Pro plan:</strong> 200 questions per month</li>
+      <li>Limits reset on the 1st of each month</li>
+      <li>Circumventing usage limits is a violation of these Terms</li>
+    </ul>
+
+    <h3>Privacy</h3>
+    <p>Only aggregated, anonymised financial summaries are sent to Anthropic. Your raw transactions, personal identifiers, and account details are never shared. See our <a href="/privacy#inka-ai">Privacy Policy Section 4A</a> for full details.</p>
+
+    <h3>Anthropic's Terms</h3>
+    <p>Your use of Inka AI is also subject to Anthropic's usage policies. See <a href="https://www.anthropic.com/legal/aup" target="_blank">anthropic.com/legal/aup</a>.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="section" id="subscriptions">
+    <h2><span class="num">5</span> Subscriptions</h2>
+    <p><span style="color:#2563eb">Inka</span>pify offers a Pro subscription that unlocks additional features including unlimited accounts, budgets, full transaction history, advanced reports, CSV import/export, and increased Inka AI usage limits.</p>
+
+    <h3>Plans &amp; Pricing</h3>
+    <ul>
+      <li><strong>Pro Monthly:</strong> $4.99/month</li>
+      <li><strong>Pro Annual:</strong> $39.99/year (save 33% vs monthly)</li>
+      <li><strong>Free tier:</strong> Always available with core features</li>
+    </ul>
+
+    <h3>Billing</h3>
+    <ul>
+      <li>Subscriptions are billed through the Google Play Store</li>
+      <li>Payment is charged to your Google Play account at confirmation of purchase</li>
+      <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+      <li>You can manage and cancel your subscription in Google Play Store settings</li>
+    </ul>
+
+    <h3>Cancellation</h3>
+    <p>You may cancel your subscription at any time through Google Play Store. Cancellation takes effect at the end of the current billing period. You retain Pro access until the period ends. No partial refunds are provided for unused portions.</p>
+
+    <h3>Refunds</h3>
+    <p>Refund requests are handled by Google Play Store in accordance with their refund policies. We do not process refunds directly. Contact Google Play support for refund requests.</p>
+
+    <h3>Price Changes</h3>
+    <p>We reserve the right to change subscription pricing with reasonable advance notice. Your continued use of a Pro subscription after a price change constitutes acceptance of the new price.</p>
+
+    <h3>Beta Tier</h3>
+    <p>Users designated as beta testers receive Pro-level access at no charge for a limited period. Beta access may be modified or revoked at any time at our sole discretion.</p>
+
+    <h3>Grandfathered Users</h3>
+    <p>Early adopters who registered before the introduction of paid subscriptions may receive permanent Pro access at no charge. This is a discretionary benefit and may not be transferred.</p>
+
+    <h3>Feature Limits on Free Plan</h3>
+    <p>Free plan limits are controlled via remote configuration and may be adjusted from time to time. We will not reduce free tier limits without reasonable notice to users.</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="donations">
+    <h2><span class="num">6</span> Donations</h2>
+    <p><span style="color:#2563eb">Inka</span>pify accepts voluntary one-time donations to support development. By making a donation, you agree to the following:</p>
+    <ul>
+      <li>Donations are entirely voluntary and do not unlock any features or content</li>
+      <li>Donations are non-refundable except where required by Google Play's refund policy</li>
+      <li>Donations are processed through Google Play as consumable in-app purchases</li>
+      <li>You may donate as many times as you wish with no restrictions</li>
+      <li>Donation amounts are fixed tiers set in the Google Play Store</li>
+    </ul>
+    <div class="hl-blue">Donations support ongoing development and server costs. They are a gesture of appreciation — not a purchase of goods or services.</div>
+  </div>
+
+  <!-- 7 -->
+  <div class="section" id="data">
+    <h2><span class="num">7</span> Your Data</h2>
+
+    <h3>Ownership</h3>
+    <p>You own all financial data you enter into <span style="color:#2563eb">Inka</span>pify. We do not claim any ownership rights over your personal financial information.</p>
+
+    <h3>License to Us</h3>
+    <p>By using <span style="color:#2563eb">Inka</span>pify, you grant us a limited, non-exclusive license to store, process, and display your data solely for the purpose of providing the App's services to you. We do not use your financial data for any other purpose.</p>
+
+    <h3>Your Responsibility</h3>
+    <ul>
+      <li>You are responsible for the accuracy of data you enter</li>
+      <li>We recommend regularly exporting your data as a backup using the CSV export feature</li>
+      <li>We are not liable for data loss resulting from your own actions (e.g. Reset All Data)</li>
+    </ul>
+
+    <h3>Data Handling</h3>
+    <p>Our collection and use of your personal information is governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="section" id="disclaimer">
+    <h2><span class="num">8</span> Disclaimer of Warranties</h2>
+    <div class="hl-warn">⚠️ &nbsp;<strong>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.</strong></div>
+    <p>To the fullest extent permitted by law, <span style="color:#2563eb">Inka</span>pify expressly disclaims all warranties, whether express, implied, or statutory, including but not limited to:</p>
+    <ul>
+      <li>Implied warranties of merchantability and fitness for a particular purpose</li>
+      <li>Warranties that the App will be uninterrupted, error-free, or secure</li>
+      <li>Warranties regarding the accuracy or completeness of any content</li>
+      <li>Warranties that defects will be corrected</li>
+    </ul>
+    <div class="hl-warn">⚠️ &nbsp;<strong>Financial Disclaimer:</strong> Nothing in the App, including responses from the Inka AI assistant, constitutes financial, investment, tax, or legal advice. AI-generated responses may be inaccurate or incomplete. Do not make financial decisions based solely on information in the App or generated by Inka AI. Always consult a qualified professional.</div>
+  </div>
+
+  <!-- 9 -->
+  <div class="section" id="liability">
+    <h2><span class="num">9</span> Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, <span style="color:#2563eb">Inka</span>pify and its developers, officers, and affiliates shall not be liable for any:</p>
+    <ul>
+      <li>Indirect, incidental, special, or consequential damages</li>
+      <li>Loss of data, profits, revenue, or business opportunities</li>
+      <li>Damages resulting from unauthorised access to your account</li>
+      <li>Damages resulting from your reliance on information in the App or from Inka AI</li>
+      <li>Service interruptions, bugs, or errors in the App</li>
+      <li>Any damages exceeding the amount you paid us in the past 12 months (if any)</li>
+    </ul>
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the above limitations may not apply to you.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="section" id="termination">
+    <h2><span class="num">10</span> Termination</h2>
+
+    <h3>By You</h3>
+    <p>You may stop using the App and delete your account at any time, for any reason, without notice to us.</p>
+
+    <h3>By Us</h3>
+    <p>We reserve the right to suspend or terminate your access to the App at any time, with or without cause, including if we believe you have violated these Terms. We will make reasonable efforts to notify you except where doing so would be unlawful or harmful.</p>
+
+    <h3>Effect of Termination</h3>
+    <ul>
+      <li>Your right to use the App ceases immediately upon termination</li>
+      <li>Your data will be deleted per our Privacy Policy within 30 days</li>
+      <li>Active Pro subscriptions will not be refunded upon termination for cause</li>
+      <li>Provisions that by their nature should survive termination will survive, including Sections 8, 9, and 11</li>
+    </ul>
+  </div>
+
+  <!-- 11 -->
+  <div class="section" id="ip">
+    <h2><span class="num">11</span> Intellectual Property</h2>
+    <p>The <span style="color:#2563eb">Inka</span>pify app, including its name, logo, design, code, features, and content (excluding your personal data), is owned by <span style="color:#2563eb">Inka</span>pify and protected by applicable intellectual property laws.</p>
+    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes in accordance with these Terms.</p>
+    <p>You may not:</p>
+    <ul>
+      <li>Copy, modify, or distribute any part of the App</li>
+      <li>Use the <span style="color:#2563eb">Inka</span>pify name or logo without our written permission</li>
+      <li>Create derivative works based on the App</li>
+      <li>Remove any copyright, trademark, or proprietary notices</li>
+    </ul>
+  </div>
+
+  <!-- 12 -->
+  <div class="section" id="changes">
+    <h2><span class="num">12</span> Changes to These Terms</h2>
+    <p>We may update these Terms from time to time to reflect changes in our practices, the App's features, or applicable law. When we make changes we will:</p>
+    <ul>
+      <li>Update the Effective Date at the top of this page</li>
+      <li>Post the updated Terms at inkapify.com/terms</li>
+      <li>Send an in-app notification for material changes</li>
+    </ul>
+    <p>Your continued use of the App after the updated Terms take effect constitutes your acceptance of the changes. If you do not agree to the updated Terms, you must stop using the App.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="contact-box" id="contact">
+    <h2><span class="num">13</span> Contact Us</h2>
+    <p>Questions about these Terms? We're happy to clarify anything.</p>
+    <div class="contact-row"><span class="contact-label">Contact</span><a href="https://inkapify.com/contact">inkapify.com/contact</a></div>
+    <div class="contact-row"><span class="contact-label">Email</span><a href="mailto:support@inkapify.com">support@inkapify.com</a></div>
+    <div class="contact-row"><span class="contact-label">Website</span><a href="https://inkapify.com">inkapify.com</a></div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="foot-logo"><span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span></a>
+  <div class="foot-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate">Support us</a>
+  </div>
+  <div class="foot-copy">© 2026 Inkapify. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
