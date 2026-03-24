@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Support Inkapify — Buy Us a Coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#162845;
+  --blue:#2563eb;
+  --blue-light:#eff6ff;
+  --green:#16a34a;
+  --green-light:#f0fdf4;
+  --text:#0f172a;
+  --text2:#475569;
+  --text3:#94a3b8;
+  --border:#e2e8f0;
+  --border2:#cbd5e1;
+  --off:#f8f9fc;
+  --white:#ffffff;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.nav-back{font-size:14px;color:var(--text2);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--navy)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);padding:64px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,.2) 0%,transparent 70%);pointer-events:none}
+.hero-icon{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:16px;position:relative;z-index:1}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto;font-weight:300;line-height:1.7;position:relative;z-index:1}
+
+/* WRAP */
+.wrap{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+
+/* STORY */
+.story{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:var(--shadow)}
+.story-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.story-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#0d9488);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;flex-shrink:0}
+.story-name{font-size:15px;font-weight:500;color:var(--text)}
+.story-role{font-size:13px;color:var(--text3)}
+.story p{font-size:15px;color:var(--text2);line-height:1.75;margin-bottom:14px}
+.story p:last-child{margin-bottom:0}
+.story p strong{color:var(--text);font-weight:500}
+.story-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.stat-item{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.stat-label{font-size:12px;color:var(--text3)}
+
+/* DONATE CARD */
+.donate-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:var(--shadow)}
+.donate-card h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px}
+.donate-sub{font-size:14px;color:var(--text2);margin-bottom:28px}
+
+/* Amounts */
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.amt{border:1.5px solid var(--border);border-radius:14px;padding:16px 12px;text-align:center;cursor:pointer;transition:all .18s;background:var(--white);user-select:none;-webkit-tap-highlight-color:transparent}
+.amt:hover{border-color:#93c5fd;background:var(--blue-light)}
+.amt.selected{border:2px solid var(--blue);background:var(--blue-light)}
+.amt-price{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.amt.selected .amt-price{color:var(--blue)}
+.amt-label{font-size:11px;color:var(--text3);line-height:1.3}
+.amt.selected .amt-label{color:#3b82f6}
+
+/* Note */
+.donate-note{display:flex;align-items:flex-start;gap:10px;background:var(--blue-light);border:1px solid rgba(37,99,235,.15);border-radius:12px;padding:14px 16px;margin-bottom:24px}
+.donate-note p{font-size:13px;color:#1e40af;line-height:1.55}
+
+/* Button */
+.btn-donate{width:100%;padding:16px;background:var(--navy);color:#fff;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn-donate:hover{background:var(--navy2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,31,61,.2)}
+.btn-note{font-size:12px;color:var(--text3);text-align:center;margin-top:10px}
+
+/* PROMISE */
+.promise{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);border-radius:20px;padding:32px;margin-bottom:28px}
+.promise h2{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#fff;margin-bottom:20px;letter-spacing:-.3px}
+.promise-list{display:flex;flex-direction:column;gap:14px}
+.promise-item{display:flex;align-items:flex-start;gap:12px}
+.promise-dot{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.promise-text{font-size:14px;color:rgba(255,255,255,.8);line-height:1.6}
+.promise-text strong{color:#fff;font-weight:500}
+
+/* FAQ */
+.faq{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:32px;margin-bottom:28px;box-shadow:var(--shadow)}
+.faq h2{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--navy);margin-bottom:20px;letter-spacing:-.3px}
+.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:6px;transition:border-color .18s}
+.faq-item.open{border-color:#93c5fd}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:500;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none}
+.faq-arrow{font-size:16px;color:var(--text3);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(45deg);color:var(--blue)}
+.faq-a{padding:0 20px;font-size:14px;color:var(--text2);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:160px;padding:0 20px 16px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--white);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;text-decoration:none;letter-spacing:-.5px}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--text2)}
+.foot-copy{font-size:12px;color:var(--text3)}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav{padding:0 20px}
+  .hero{padding:56px 20px 64px}
+  .wrap{padding:36px 16px 60px}
+  .story,.donate-card,.promise,.faq{padding:24px 20px}
+  .amounts{gap:8px}
+  .amt{padding:14px 8px}
+  .amt-price{font-size:17px}
+  footer{padding:24px 20px;flex-direction:column;text-align:center}
+  .foot-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span>
+  </a>
+  <a href="/" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to home
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+  </div>
+  <h1>Support <span style="color:#2563eb">Inka</span><span style="color:#fff">pify</span></h1>
+  <p class="hero-sub">Built by one developer, for everyone. Your support keeps the app free, independent, and growing.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- STORY -->
+  <div class="story reveal">
+    <div class="story-header">
+      <div class="story-avatar">K</div>
+      <div>
+        <div class="story-name">Kamlesh</div>
+        <div class="story-role">Sole developer &amp; creator of <span style="color:#2563eb">Inka</span>pify</div>
+      </div>
+    </div>
+    <p>Hi, I'm the solo developer behind <span style="color:#2563eb">Inka</span>pify. I built this app because I wanted a <strong>personal finance tool that actually understands my money</strong> — not just logs transactions, but gives me real insights through AI.</p>
+    <p><span style="color:#2563eb">Inka</span>pify is a side project built in my spare time. Every feature — from the loan amortization engine to Inka AI — was designed, coded, and tested by me alone. Running this app has real costs: AI API usage, server infrastructure, and ongoing development time.</p>
+    <p>If <span style="color:#2563eb">Inka</span>pify has helped you understand your finances better, <strong>buying me a coffee goes a long way</strong>. It keeps me motivated to keep building and keeps the app free for everyone.</p>
+    <div class="story-stats">
+      <div class="stat-item">
+        <div class="stat-num">11</div>
+        <div class="stat-label">Reports built</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">13</div>
+        <div class="stat-label">Dashboard tiles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Developer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DONATE -->
+  <div class="donate-card reveal">
+    <h2>Choose your support</h2>
+    <p class="donate-sub">Every contribution helps, no matter the size.</p>
+
+    <div class="amounts" id="amounts">
+      <div class="amt" onclick="select(this,'$0.99','donate_99')">
+        <div class="amt-price">$0.99</div>
+        <div class="amt-label">A thank you</div>
+      </div>
+      <div class="amt" onclick="select(this,'$2.99','donate_299')">
+        <div class="amt-price">$2.99</div>
+        <div class="amt-label">Buy a coffee</div>
+      </div>
+      <div class="amt" onclick="select(this,'$4.99','donate_499')">
+        <div class="amt-price">$4.99</div>
+        <div class="amt-label">A nice treat</div>
+      </div>
+      <div class="amt" onclick="select(this,'$7.99','donate_799')">
+        <div class="amt-price">$7.99</div>
+        <div class="amt-label">Lunch on us</div>
+      </div>
+      <div class="amt selected" onclick="select(this,'$9.99','donate_999')">
+        <div class="amt-price">$9.99</div>
+        <div class="amt-label">Big thanks</div>
+      </div>
+      <div class="amt" onclick="select(this,'$14.99','donate_1499')">
+        <div class="amt-price">$14.99</div>
+        <div class="amt-label">Super supporter</div>
+      </div>
+      <div class="amt" onclick="select(this,'$19.99','donate_1999')">
+        <div class="amt-price">$19.99</div>
+        <div class="amt-label">Amazing!</div>
+      </div>
+      <div class="amt" onclick="select(this,'$49.99','donate_4999')">
+        <div class="amt-price">$49.99</div>
+        <div class="amt-label">Incredible</div>
+      </div>
+      <div class="amt" onclick="select(this,'$99.99','donate_9999')">
+        <div class="amt-price">$99.99</div>
+        <div class="amt-label">Hero ✦</div>
+      </div>
+    </div>
+
+    <div class="donate-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+      <p>One-time payment via Google Play. <strong>No subscription, no recurring charge.</strong> You can donate again anytime — no restrictions.</p>
+    </div>
+
+    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="btn-donate" id="donate-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Donate $9.99 via App
+    </a>
+    <p class="btn-note">Opens in <span style="color:#2563eb">Inka</span>pify app · Secure Google Play billing · 100% goes to development</p>
+  </div>
+
+  <!-- PROMISE -->
+  <div class="promise reveal">
+    <h2>Our promise to you</h2>
+    <div class="promise-list">
+      <div class="promise-item">
+        <div class="promise-dot">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="2 5 4 7 8 3"/></svg>
+        </div>
+        <div class="promise-text"><strong><span style="color:#2563eb">Inka</span>pify will always have a free tier.</strong> Donations help us keep it free and generous for everyone.</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-dot">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="2 5 4 7 8 3"/></svg>
+        </div>
+        <div class="promise-text"><strong>No ads, ever.</strong> We will never show ads or sell your financial data. Your money is private.</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-dot">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="2 5 4 7 8 3"/></svg>
+        </div>
+        <div class="promise-text"><strong>Donations are completely voluntary.</strong> They do not unlock any extra features — that's what Pro is for. This is purely to say thank you.</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-dot">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="2 5 4 7 8 3"/></svg>
+        </div>
+        <div class="promise-text"><strong>Every donation is seen by me personally.</strong> It genuinely motivates me to keep building and improving the app.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq reveal">
+    <h2>Questions</h2>
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does donating unlock Pro features? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">No — donations and Pro subscriptions are completely separate. Donating is a voluntary way to say thank you. If you want Pro features, upgrade via the app for $4.99/month or $39.99/year.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I donate more than once? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Yes — absolutely. There is no limit. You can donate as many times as you like, any amount, any time. Each donation is a completely separate one-time payment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is the donation processed? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Donations are processed securely through Google Play billing — the same trusted system used for all app purchases. Your payment details are never stored by <span style="color:#2563eb">Inka</span>pify.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will I get a receipt? <span class="faq-arrow">+</span></div>
+      <div class="faq-a">Yes — Google Play sends an email receipt to your Gmail address after every purchase, just like any other Google Play transaction.</div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div style="text-align:center;padding:8px 0 0" class="reveal">
+    <p style="font-size:15px;color:var(--text2);margin-bottom:20px;line-height:1.7">Not ready to donate? That's completely fine.<br/>Using the app and sharing it with friends helps just as much.</p>
+    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M20 18H4"/></svg>
+      Download <span style="color:#2563eb">Inka</span>pify Free
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="foot-logo">
+    <span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span>
+  </a>
+  <div class="foot-links">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate">Support us</a>
+  </div>
+  <div class="foot-copy">© 2026 Inkapify. All rights reserved.</div>
+</footer>
+
+<script>
+let selectedAmt = '$9.99'
+let selectedId  = 'donate_999'
+
+function select(el, amt, id) {
+  document.querySelectorAll('.amt').forEach(a => a.classList.remove('selected'))
+  el.classList.add('selected')
+  selectedAmt = amt
+  selectedId  = id
+  const btn = document.getElementById('donate-btn')
+  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Donate ${amt} via App`
+}
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting)
+      setTimeout(() => e.target.classList.add('visible'), i * 80)
+  })
+}, { threshold: 0.08 })
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
+</script>
+</body>
+</html>
