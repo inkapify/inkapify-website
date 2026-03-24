@@ -64,30 +64,37 @@ h1 .grad{background:linear-gradient(135deg,var(--blue2) 0%,#7c3aed 50%,var(--tea
 .btn-outline:hover{border-color:var(--blue3);color:var(--blue2);background:var(--blue-light)}
 .hero-footnote{font-size:13px;color:var(--text3)}
 
-/* ── SCREENSHOT GALLERY ── */
-.hero-screenshots{
-  position:relative;z-index:1;margin-top:72px;
-  display:flex;justify-content:center;align-items:center;gap:20px;
-}
-.hs-col{display:flex;flex-direction:column;gap:18px;align-items:center}
-.hs-left{transform:translateY(48px)}
-.hs-right{transform:translateY(48px)}
-.hs-phone{border-radius:36px;flex-shrink:0;
-  box-shadow:0 20px 60px rgba(15,31,61,.14),0 4px 16px rgba(15,31,61,.07);
-  border:1px solid var(--border);background:var(--white);
-  padding:10px}
-.hs-phone img{display:block;width:100%;height:100%;object-fit:cover;border-radius:28px}
-.hs-main{width:280px;animation:float 5.5s ease-in-out infinite;z-index:3;
-  box-shadow:0 40px 100px rgba(15,31,61,.22),0 8px 24px rgba(15,31,61,.12)}
-.hs-main img{height:540px}
-.hs-sm{width:200px;animation:float 5.5s ease-in-out infinite}
-.hs-sm img{height:260px}
-.hs-left .hs-sm:nth-child(1){animation-delay:.4s;opacity:.92}
-.hs-left .hs-sm:nth-child(2){animation-delay:1.2s;opacity:.75}
-.hs-left .hs-sm:nth-child(3){animation-delay:2.0s;opacity:.58}
-.hs-right .hs-sm:nth-child(1){animation-delay:.8s;opacity:.92}
-.hs-right .hs-sm:nth-child(2){animation-delay:1.6s;opacity:.75}
-.hs-right .hs-sm:nth-child(3){animation-delay:2.4s;opacity:.58}
+/* ── PHONE ── */
+.hero-phones{position:relative;z-index:1;margin-top:72px;display:flex;justify-content:center;align-items:flex-end;gap:16px}
+.phone{background:var(--white);border-radius:36px;border:1px solid var(--border);overflow:hidden;box-shadow:0 24px 80px rgba(15,31,61,.12),0 4px 16px rgba(15,31,61,.06);flex-shrink:0}
+.phone.main{width:240px;animation:float 5s ease-in-out infinite;z-index:2}
+.phone.side{width:210px;opacity:.55;transform:scale(.9) translateY(24px);animation:float 5s ease-in-out infinite;animation-delay:1s}
+.ph-notch{width:72px;height:18px;background:#f1f4f9;border-radius:0 0 10px 10px;margin:0 auto 14px}
+.ph-pad{padding:0 16px 20px}
+.ph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.ph-brand{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;color:var(--blue2);letter-spacing:.5px}
+.ph-av{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--blue2),var(--teal));display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff}
+.ph-nw{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-radius:14px;padding:14px;margin-bottom:10px}
+.ph-nw-l{font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.8px;margin-bottom:3px}
+.ph-nw-v{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1}
+.ph-nw-c{font-size:10px;color:#4ade80;margin-top:4px}
+.ph-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:10px;margin-bottom:7px}
+.ph-cl{font-size:8px;color:var(--text3);letter-spacing:.5px;margin-bottom:3px}
+.ph-cv{font-size:12px;font-weight:500;color:var(--text)}
+.ph-bars{display:flex;align-items:flex-end;gap:4px;height:44px;margin:10px 0}
+.ph-b{border-radius:3px 3px 0 0;flex:1}
+.ph-b1{background:var(--orange);height:36%}
+.ph-b2{background:var(--teal);height:56%}
+.ph-b3{background:var(--green);height:74%}
+.ph-b4{background:var(--blue3);height:92%}
+.ph-ask{display:flex;align-items:center;gap:6px;background:var(--blue-light);border:1px solid rgba(37,99,235,.15);border-radius:8px;padding:7px 10px}
+.ph-ask-dot{width:5px;height:5px;border-radius:50%;background:var(--blue2);animation:blink 2s infinite;flex-shrink:0}
+.ph-ask-t{font-size:9px;color:var(--blue2)}
+/* side phone content */
+.ph-chat{display:flex;flex-direction:column;gap:7px}
+.ph-bu{align-self:flex-end;background:var(--navy);border-radius:9px 9px 2px 9px;padding:7px 9px;font-size:9px;color:#fff;max-width:85%}
+.ph-bi{align-self:flex-start;background:var(--off2);border:1px solid var(--border);border-radius:2px 9px 9px 9px;padding:7px 9px;font-size:9px;color:var(--text);max-width:90%}
+.ph-bi strong{color:var(--blue2)}
 
 /* ── LOGOS STRIP ── */
 .trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--off);padding:22px 60px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
@@ -269,10 +276,6 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
   .nav-links{display:none}
   .sec{padding:80px 24px}
   .hero{padding:110px 24px 60px}
-  .hs-main{width:220px}
-  .hs-main img{height:420px}
-  .hs-sm{width:155px}
-  .hs-sm img{height:200px}
   .feat-grid{grid-template-columns:1fr 1fr}
   .deep{grid-template-columns:1fr}
   .dc.wide{grid-column:span 1}
@@ -290,9 +293,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
   .trust-item{padding:0 14px}
 }
 @media(max-width:640px){
-  .hs-col{display:none}
-  .hs-main{width:240px}
-  .hs-main img{height:460px}
+  .hero-phones .phone.side{display:none}
   .feat-grid{grid-template-columns:1fr}
   .acc-grid{grid-template-columns:repeat(2,1fr)}
   .sec-cards{grid-template-columns:1fr 1fr}
@@ -337,33 +338,38 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
       <a href="#features" class="btn-outline">See all features →</a>
     </div>
     <p class="hero-footnote">No bank connections · No credit card · iOS coming soon</p>
-    <div class="hero-screenshots">
-      <!-- Side screens (left) -->
-      <div class="hs-col hs-left">
-        <div class="hs-phone hs-sm">
-          <img src="budget.jpg" alt="Budget tracking"/>
-        </div>
-        <div class="hs-phone hs-sm">
-          <img src="reports-list.jpg" alt="Reports list"/>
-        </div>
-        <div class="hs-phone hs-sm">
-          <img src="spending-by-category.jpg" alt="Spending by category"/>
+    <div class="hero-phones">
+      <div class="phone side">
+        <div class="ph-notch"></div>
+        <div class="ph-pad">
+          <div class="ph-top"><div class="ph-brand">INKAPIFY</div><div class="ph-av">A</div></div>
+          <div class="ph-card"><div class="ph-cl">MONTHLY EXPENSES</div><div class="ph-cv">$3,420 this month</div></div>
+          <div class="ph-card"><div class="ph-cl">SAVINGS RATE</div><div class="ph-cv">28% saved · On track</div></div>
+          <div class="ph-card"><div class="ph-cl">UPCOMING BILLS</div><div class="ph-cv">3 bills · $580 due</div></div>
         </div>
       </div>
-      <!-- Main center phone -->
-      <div class="hs-phone hs-main">
-        <img src="dashboard.jpg" alt="Inkapify Dashboard"/>
+      <div class="phone main">
+        <div class="ph-notch"></div>
+        <div class="ph-pad">
+          <div class="ph-top"><div class="ph-brand">INKAPIFY</div><div class="ph-av">A</div></div>
+          <div class="ph-nw"><div class="ph-nw-l">NET WORTH</div><div class="ph-nw-v">$24,580</div><div class="ph-nw-c">↑ +3.2% this month</div></div>
+          <div class="ph-card"><div class="ph-cl">BUDGET ALERT</div><div class="ph-cv">Dining Out — 92% used</div></div>
+          <div class="ph-bars"><div class="ph-b ph-b1"></div><div class="ph-b ph-b2"></div><div class="ph-b ph-b3"></div><div class="ph-b ph-b4"></div></div>
+          <div class="ph-ask"><div class="ph-ask-dot"></div><div class="ph-ask-t">Ask Inka about your finances...</div></div>
+        </div>
       </div>
-      <!-- Side screens (right) -->
-      <div class="hs-col hs-right">
-        <div class="hs-phone hs-sm">
-          <img src="inka-ai.jpg" alt="Inka AI assistant"/>
-        </div>
-        <div class="hs-phone hs-sm">
-          <img src="transaction-history.jpg" alt="Transaction history"/>
-        </div>
-        <div class="hs-phone hs-sm">
-          <img src="transaction-create.jpg" alt="Add transaction"/>
+      <div class="phone side">
+        <div class="ph-notch"></div>
+        <div class="ph-pad">
+          <div class="ph-top"><div class="ph-brand">INKAPIFY</div><div class="ph-av">A</div></div>
+          <div class="ph-chat">
+            <div class="ph-bu">What's my biggest expense?</div>
+            <div class="ph-bi">Food & Dining at <strong>$480</strong> — 28% of spending.</div>
+            <div class="ph-bu">Am I over budget?</div>
+            <div class="ph-bi">Dining Out is at <strong>92%</strong> already. Slow down this week.</div>
+            <div class="ph-bu">How are my goals?</div>
+            <div class="ph-bi">2 of 3 goals on track. Emergency fund at <strong>78%</strong>.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -585,7 +591,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">How does Inka AI work? <span class="farr">+</span></div><div class="fa">Inka answers questions using aggregated summaries of your data — not raw transactions. We send only totals and percentages to the AI model. No account numbers, transaction notes, names, or identifiers are shared. Conversations are deleted when you close the chat.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">What's included in the free plan? <span class="farr">+</span></div><div class="fa">The free plan includes unlimited transactions, up to 3 accounts, 3 budgets, 5 recurring rules, 15 Inka AI questions per month, and 90 days of history. Pro unlocks unlimited everything, full history, all 8 reports, CSV import/export, and 200 Inka AI questions per month.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Can I import my existing transactions? <span class="farr">+</span></div><div class="fa">Yes. Pro users can import transactions from any bank via CSV. The importer automatically detects transfer pairs and handles multiple currencies. Free users can export their data at any time.</div></div>
-    <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Is iOS available? <span class="farr">+</span></div><div class="fa">Not yet — Inkapify is Android-first. iOS is planned and will be announced when available. Email <a href="/cdn-cgi/l/email-protection#6e1d1b1e1e011c1a2e0700050f1e070817400d0103" style="color:#2563eb"><span class="__cf_email__" data-cfemail="9cefe9ececf3eee8dcf5f2f7fdecf5fae5b2fff3f1">[email&#160;protected]</span></a> to be notified when iOS launches.</div></div>
+    <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Is iOS available? <span class="farr">+</span></div><div class="fa">Not yet — Inkapify is Android-first. iOS is planned and will be announced when available. Email support@inkapify.com to be notified when iOS launches.</div></div>
   </div>
 </div>
 
@@ -615,7 +621,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
     <div>
       <div class="foot-logo"><span style="color:#2563eb">Inka</span><span style="color:#0f1f3d">pify</span></div>
       <p class="foot-tag">AI-powered personal finance for people who want more than a transaction log.</p>
-      <p style="font-size:13px;color:var(--text3)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b5b3b6b6a9b4b286afa8ada7b6afa0bfe8a5a9ab">[email&#160;protected]</a></p>
+      <p style="font-size:13px;color:var(--text3)">support@inkapify.com</p>
     </div>
     <div>
       <div class="foot-ct">Product</div>
@@ -631,7 +637,8 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
       <ul class="foot-links">
         <li><a href="#faq">FAQ</a></li>
         <li><a href="/contact">Contact Us</a></li>
-        <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b080e0b0b14090f3b1215101a0b121d0255181416">[email&#160;protected]</a></li>
+        <li><a href="mailto:support@inkapify.com">Email Support</a></li>
+        <li><a href="/donate" style="color:var(--blue2)">❤ Support Inkapify</a></li>
       </ul>
     </div>
     <div>
@@ -645,29 +652,21 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
   <div class="foot-bottom">
     <div class="foot-copy">© 2026 Inkapify. All rights reserved.</div>
     <div class="foot-legal">
-      <a hr      <a href="/privacy" style="font-size:12px;color:var(--text3);text-decoration:none">Privacy</a>
-      <a href="/terms" style="font-size:12px;color:var(--text3);text-decoration:none">Terms</a>
-      <a href="/contact" style="font-size:12px;color:var(--text3);text-decoration:none">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+      <a href="/donate">Support us</a>
     </div>
   </div>
 </footer>
 
 <script>
-// Reveal on scroll
 const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, {threshold: 0.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// FAQ accordion arrow fix
-document.querySelectorAll('.fq').forEach(fq => {
-  fq.addEventListener('click', () => {
-    const fi = fq.parentElement;
-    const wasOpen = fi.classList.contains('open');
-    document.querySelectorAll('.fi.open').forEach(f => f.classList.remove('open'));
-    if (!wasOpen) fi.classList.add('open');
-  });
-});
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 70)
+  })
+}, { threshold: 0.08 })
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
 </script>
 </body>
 </html>
