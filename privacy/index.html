@@ -160,7 +160,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>Categories, tags, and payees you create to organise your transactions</li>
       <li>Recurring rules, reminders, and bill schedules you configure</li>
       <li>Profile preferences, home currency, timezone, and app settings</li>
-      <li>Receipt photos you choose to attach to transactions</li>
+      <li>Receipt photos you choose to attach to transactions (upload requires internet connectivity; the transaction itself saves offline)</li>
     </ul>
 
     <h3>Information Collected Automatically</h3>
@@ -213,7 +213,17 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <!-- 3 -->
   <div class="section" id="storage">
     <h2><span class="num">3</span> Data Storage &amp; Security</h2>
-    <p>Your data is stored securely using Supabase, a trusted cloud infrastructure provider. All data is encrypted in transit using TLS/SSL and encrypted at rest using AES-256.</p>
+    <p>Your data is stored in two places: <strong>locally on your device</strong> using an on-device database, and <strong>in the cloud</strong> on our secure servers. All cloud data is encrypted in transit using TLS/SSL and encrypted at rest using AES-256.</p>
+
+    <h3>Offline-First Architecture</h3>
+    <p><span style="color:#2563eb">Inka</span>pify is designed to work fully offline. Your financial data is saved to your device first and accessible at all times without an internet connection. When connectivity is available, changes are automatically synced to our cloud servers within seconds. This means your data is always available regardless of network status.</p>
+    <div class="hl-green">
+      <li>Data saved locally first — available offline at all times</li>
+      <li>Automatic cloud backup when online — no manual action required</li>
+      <li>Receipt photo uploads require internet; all other features work offline</li>
+    </div>
+
+    <h3>Security Measures</h3>
     <p>Our security measures include:</p>
     <ul>
       <li>Row-level security policies — you can only ever access your own data</li>
@@ -223,7 +233,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>JWT tokens stored in device secure storage (not accessible to other apps)</li>
       <li>Regular security monitoring, audits, and updates</li>
     </ul>
-    <p>While we implement strong security measures, no method of electronic storage or transmission is 100% secure. We are committed to protecting your data to the best of our ability.</p>
+    <p>While we implement strong security measures, no method of electronic storage or transmission is 100% secure. We are committed to protecting your data to the best of our ability. If device storage is wiped before a sync completes, locally unsaved changes may be lost — we recommend using the CSV export feature as a regular backup.</p>
   </div>
 
   <!-- 4 -->
@@ -231,8 +241,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h2><span class="num">4</span> Data Sharing &amp; Third Parties</h2>
     <p>We do not sell, trade, or rent your personal information. We share limited data only with the following trusted service providers necessary to run the app:</p>
 
-    <h3>Supabase</h3>
-    <p>Database hosting, authentication, and file storage. Your financial data is stored on their servers under strict security controls and row-level security policies.</p>
+    <h3>Cloud Infrastructure</h3>
+    <p>Database hosting, authentication, and file storage. Your financial data is stored on secure servers with strict access controls and data isolation policies ensuring only you can access your data.</p>
 
     <h3>Anthropic</h3>
     <p>AI processing for the Inka AI assistant feature. Only aggregated, anonymised financial summaries are shared — never raw data or personal identifiers. See Section 4A for full details.</p>
@@ -240,8 +250,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h3>RevenueCat</h3>
     <p>Subscription management and in-app purchase processing for <span style="color:#2563eb">Inka</span>pify Pro. Only your anonymous user ID and subscription status are shared. RevenueCat never receives your financial data.</p>
 
-    <h3>Expo / EAS</h3>
-    <p>App build infrastructure and over-the-air update delivery. No personal financial data is shared with Expo.</p>
+    <h3>App Delivery Infrastructure</h3>
+    <p>App build infrastructure and over-the-air update delivery. No personal financial data is shared with our app delivery provider.</p>
 
     <h3>Google Play</h3>
     <p>App distribution and payment processing for subscriptions and donations. Google Play handles billing in accordance with their own privacy policy.</p>
