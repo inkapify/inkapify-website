@@ -376,7 +376,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
 <div class="trust">
   <div class="trust-item"><span class="trust-icon">🔒</span>AES-256 encrypted</div>
   <div class="trust-item"><span class="trust-icon">🚫</span>No bank connections</div>
-  <div class="trust-item"><span class="trust-icon">🤖</span>Powered by Claude AI</div>
+  <div class="trust-item"><span class="trust-icon">🤖</span>Powered by Gemini AI</div>
   <div class="trust-item"><span class="trust-icon">🌍</span>Multi-currency support</div>
   <div class="trust-item"><span class="trust-icon">✅</span>GDPR compliant</div>
 </div>
@@ -396,6 +396,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
     <div class="fc"><div class="fc-ic" style="background:var(--green-light)">🔄</div><div class="fc-t">Recurring Automation</div><div class="fc-d">Auto-enter bills and recurring income. Full loan amortization with EMI schedules. Prepayment simulation. Flexible end conditions.</div></div>
     <div class="fc"><div class="fc-ic" style="background:#faf5ff">🎯</div><div class="fc-t">Goals & Debts</div><div class="fc-d">Set savings goals and track progress. Track money lent and borrowed. Full debt payment history and settlement tracking.</div></div>
     <div class="fc"><div class="fc-ic" style="background:#fefce8">🎨</div><div class="fc-t">Fully Customisable</div><div class="fc-d">23 stunning themes including 5 new Professional themes with rich accent headers. 13 configurable dashboard tiles. Multi-currency. Full timezone awareness.</div></div>
+    <div class="fc"><div class="fc-ic" style="background:#f0fdf4">📄</div><div class="fc-t">Smart Import</div><div class="fc-d">Import transactions from any bank by uploading a PDF statement — AI extracts and categorises everything automatically. Or snap a photo of a receipt and let AI fill in the details instantly.</div></div>
   </div>
 </div>
 </div>
@@ -440,7 +441,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
   <div class="hiw reveal">
     <div class="hiw-step"><div class="hiw-line"></div><div class="hiw-num">1</div><div class="hiw-t">Create account</div><div class="hiw-d">Sign up free in seconds. Choose your home currency and timezone. Data syncs securely across devices.</div></div>
     <div class="hiw-step"><div class="hiw-line"></div><div class="hiw-num">2</div><div class="hiw-t">Add your accounts</div><div class="hiw-d">Set up your bank accounts, credit cards, loans, and investments. Enter opening balances and Inkapify tracks the rest.</div></div>
-    <div class="hiw-step"><div class="hiw-line"></div><div class="hiw-num">3</div><div class="hiw-t">Track & budget</div><div class="hiw-d">Log transactions, set budgets, automate recurring bills. Import from CSV or enter manually.</div></div>
+    <div class="hiw-step"><div class="hiw-line"></div><div class="hiw-num">3</div><div class="hiw-t">Track & budget</div><div class="hiw-d">Log transactions, set budgets, automate recurring bills. Enter manually, import via CSV or PDF bank statement, or scan a receipt with your camera.</div></div>
     <div class="hiw-step"><div class="hiw-num">4</div><div class="hiw-t">Ask Inka</div><div class="hiw-d">Chat with Inka AI for personalised insights about your spending, savings rate, and goals.</div></div>
   </div>
 </div>
@@ -564,6 +565,8 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
         <li class="y">All 11 reports + drill-down</li>
         <li class="y">Custom date ranges</li>
         <li class="y">CSV import &amp; export</li>
+        <li class="y">PDF bank statement import</li>
+        <li class="y">Receipt scan (AI-powered)</li>
         <li class="y">All 23 themes + 13 tiles</li>
         <li class="y">Investment tracking</li>
       </ul>
@@ -582,11 +585,12 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
     <p class="sec-p" style="margin:0 auto">Everything you need to know before you download.</p>
   </div>
   <div class="faq reveal">
-    <div class="fi open"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Does Inkapify connect to my bank? <span class="farr">+</span></div><div class="fa">No. Inkapify never connects to your bank accounts or requests banking credentials. All transactions are entered manually or imported via CSV. This is intentional — your banking passwords never touch our servers.</div></div>
+    <div class="fi open"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Does Inkapify connect to my bank? <span class="farr">+</span></div><div class="fa">No. Inkapify never connects to your bank accounts or requests banking credentials. You add transactions manually, import via CSV, upload a PDF bank statement, or scan a receipt with your camera. This is intentional — your banking passwords never touch our servers.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Is my financial data safe? <span class="farr">+</span></div><div class="fa">Yes. All data is encrypted at rest (AES-256) and in transit (TLS/SSL). Row-level security means your data is completely isolated. You can enable App Lock with fingerprint or PIN. Delete your account and all data at any time from within the app.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">How does Inka AI work? <span class="farr">+</span></div><div class="fa">Inka answers questions using aggregated summaries of your data — not raw transactions. We send only totals and percentages to the AI model. No account numbers, transaction notes, names, or identifiers are shared. Conversations are deleted when you close the chat.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">What's included in the free plan? <span class="farr">+</span></div><div class="fa">The free plan includes unlimited transactions, up to 3 accounts, 3 budgets, 5 recurring rules, 15 Inka AI questions per month, and 90 days of history. Pro unlocks unlimited everything, full history, all 11 reports, CSV import/export, and 200 Inka AI questions per month.</div></div>
-    <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Can I import my existing transactions? <span class="farr">+</span></div><div class="fa">Yes. Pro users can import transactions from any bank via CSV. The importer automatically detects transfer pairs and handles multiple currencies. Free users can export their data at any time.</div></div>
+    <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Can I import my existing transactions? <span class="farr">+</span></div><div class="fa">Yes — three ways. (1) CSV: import from any bank export. (2) PDF bank statement: upload your statement PDF and AI automatically extracts and categorises transactions. (3) Receipt scan: photograph a receipt and AI fills in the merchant, amount, date, and category. All three import methods are Pro features. Free users can always export their data as CSV.</div></div>
+    <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Is my data safe when using PDF import or receipt scan? <span class="farr">+</span></div><div class="fa">Yes. For PDF import, only extracted transaction text (merchant names, dates, amounts) is sent to Google's Gemini AI for classification — the raw PDF file is never stored on our servers. For receipt scan, the photo is sent directly to Gemini AI over an encrypted connection and discarded immediately after extraction — we never store your receipt images. We use Google's paid API plan, which means your data is never used to train AI models. See our <a href="/privacy" style="color:#2563eb">Privacy Policy</a> for full details.</div></div>
     <div class="fi"><div class="fq" onclick="this.parentElement.classList.toggle('open')">Is iOS available? <span class="farr">+</span></div><div class="fa">Not yet — Inkapify is Android-first. iOS is planned and will be announced when available. Email <a href="/cdn-cgi/l/email-protection#6e1d1b1e1e011c1a2e0700050f1e070817400d0103" style="color:#2563eb"><span class="__cf_email__" data-cfemail="9cefe9ececf3eee8dcf5f2f7fdecf5fae5b2fff3f1">[email&#160;protected]</span></a> to be notified when iOS launches.</div></div>
   </div>
 </div>
@@ -649,7 +653,7 @@ footer{background:var(--off);border-top:1px solid var(--border);padding:64px 60p
       <a hr      <a href="/privacy" style="font-size:12px;color:var(--text3);text-decoration:none">Privacy</a>
       <a href="/terms" style="font-size:12px;color:var(--text3);text-decoration:none">Terms</a>
       <a href="/contact" style="font-size:12px;color:var(--text3);text-decoration:none">Contact</a>
-      <a href="/donate" style="font-size:12px;color:var(--text3);text-decorationreport:none">Support us</a>
+      <a href="/donate" style="font-size:12px;color:var(--text3);text-decoration:none">Support us</a>
     </div>
   </div>
 </footer>
