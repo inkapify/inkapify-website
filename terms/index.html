@@ -133,6 +133,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <a href="#accounts">3. Accounts</a>
       <a href="#use">4. Acceptable Use</a>
       <a href="#inka-ai">4A. Inka AI</a>
+      <a href="#pdf-import">4B. PDF Import</a>
+      <a href="#receipt-scan">4C. Receipt Scan</a>
       <a href="#subscriptions">5. Subscriptions</a>
       <a href="#donations">6. Donations</a>
       <a href="#data">7. Your Data</a>
@@ -209,7 +211,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <!-- 4A -->
   <div class="section" id="inka-ai">
     <h2><span class="num">4A</span> Inka AI Terms of Use</h2>
-    <p>The Inka AI assistant is powered by Anthropic's Claude API. By using Inka AI, you agree to the following:</p>
+    <p>The Inka AI assistant is powered by Google's Gemini AI. By using Inka AI, you agree to the following:</p>
 
     <h3>Scope of Use</h3>
     <ul>
@@ -230,16 +232,64 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     </ul>
 
     <h3>Privacy</h3>
-    <p>Only aggregated, anonymised financial summaries are sent to Anthropic. Your raw transactions, personal identifiers, and account details are never shared. We have configured our API integration to opt out of Anthropic using your data for model training. See our <a href="/privacy#inka-ai">Privacy Policy Section 4A</a> for full details.</p>
+    <p>Only aggregated, anonymised financial summaries are sent to Google's Gemini AI. Your raw transactions, personal identifiers, and account details are never shared. We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models. See our <a href="/privacy#inka-ai">Privacy Policy Section 4A</a> for full details.</p>
 
-    <h3>Anthropic's Terms</h3>
-    <p>Your use of Inka AI is also subject to Anthropic's usage policies. See <a href="https://www.anthropic.com/legal/aup" target="_blank">anthropic.com/legal/aup</a>.</p>
+    <h3>Google's Terms</h3>
+    <p>Your use of Inka AI is also subject to Google's Gemini API usage policies. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a>.</p>
+  </div>
+
+  <!-- 4B -->
+  <div class="section" id="pdf-import">
+    <h2><span class="num">4B</span> PDF Import Terms of Use</h2>
+    <p>The PDF bank statement import feature (Pro plan only) uses Google's Gemini AI to classify extracted transaction data. By using PDF Import, you agree to the following:</p>
+
+    <h3>How Data Is Processed</h3>
+    <ul>
+      <li>Your PDF is processed on our secure servers — the file itself is never forwarded to any AI service</li>
+      <li>Only extracted transaction text (merchant names, dates, amounts) is sent to Google's Gemini AI for classification of unmatched rows</li>
+      <li>The PDF is not stored by <span style="color:#2563eb">Inka</span>pify after processing completes</li>
+    </ul>
+
+    <h3>Accuracy</h3>
+    <div class="hl-warn">⚠️ &nbsp;AI-generated transaction classifications may be inaccurate. Always review the import preview screen before confirming. You are responsible for verifying all imported data.</div>
+
+    <h3>Privacy</h3>
+    <p>Only extracted transaction text is sent to Google's Gemini AI — never the raw PDF, account numbers, banking credentials, or personal identifiers. We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models. See our <a href="/privacy#pdf-import">Privacy Policy Section 4B</a> for full details.</p>
+
+    <h3>Google's Terms</h3>
+    <p>Your use of PDF Import is also subject to Google's Gemini API usage policies. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a>.</p>
+  </div>
+
+  <!-- 4C -->
+  <div class="section" id="receipt-scan">
+    <h2><span class="num">4C</span> Receipt Scan Terms of Use</h2>
+    <p>The Receipt Scan feature (Pro plan only) uses Google's Gemini AI Vision to extract transaction details from receipt photos. By using Receipt Scan, you agree to the following:</p>
+
+    <h3>What You May Scan</h3>
+    <ul>
+      <li>You may only scan receipts for transactions you are personally recording in your own account</li>
+      <li>Do not scan documents containing third-party personal or financial information without their consent</li>
+    </ul>
+
+    <h3>Privacy &amp; Data Handling</h3>
+    <ul>
+      <li>Your receipt image is sent to Google's Gemini AI API over an encrypted connection for data extraction only</li>
+      <li>The image is immediately discarded after extraction — it is never stored on our servers or by Google</li>
+      <li>We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models</li>
+      <li>See our <a href="/privacy#receipt-scan">Privacy Policy Section 4C</a> for full details</li>
+    </ul>
+
+    <h3>Accuracy</h3>
+    <p>Extracted data is presented for your review before saving. Inkapify does not guarantee the accuracy of AI-extracted receipt data. You are responsible for verifying all details before confirming a transaction.</p>
+
+    <h3>Google's Terms</h3>
+    <p>Your use of Receipt Scan is also subject to Google's Gemini API usage policies. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a>.</p>
   </div>
 
   <!-- 5 -->
   <div class="section" id="subscriptions">
     <h2><span class="num">5</span> Subscriptions</h2>
-    <p><span style="color:#2563eb">Inka</span>pify offers a Pro subscription that unlocks additional features including unlimited accounts, budgets, full transaction history, advanced reports, CSV import/export, and increased Inka AI usage limits.</p>
+    <p><span style="color:#2563eb">Inka</span>pify offers a Pro subscription that unlocks additional features including unlimited accounts, budgets, full transaction history, advanced reports, CSV import/export, PDF bank statement import, receipt scanning, and increased Inka AI usage limits.</p>
 
     <h3>Plans &amp; Pricing</h3>
     <ul>
