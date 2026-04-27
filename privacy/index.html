@@ -139,7 +139,9 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <a href="#storage">3. Storage & Security</a>
       <a href="#sharing">4. Data Sharing</a>
       <a href="#inka-ai">4A. Inka AI</a>
-      <a href="#subscriptions">4B. Subscriptions</a>
+      <a href="#pdf-import">4B. PDF Import</a>
+      <a href="#receipt-scan">4C. Receipt Scan</a>
+      <a href="#subscriptions">4D. Subscriptions</a>
       <a href="#retention">5. Data Retention</a>
       <a href="#rights">6. Your Rights</a>
       <a href="#notifications">7. Notifications</a>
@@ -175,7 +177,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h3>Inka AI Conversation Data</h3>
     <ul>
       <li>Questions you ask Inka AI and Inka's responses (session-only — deleted when you close the screen)</li>
-      <li>Aggregated financial summaries sent to Anthropic's API to generate responses (see Section 4A)</li>
+      <li>Aggregated financial summaries sent to Google's Gemini API to generate responses (see Section 4A)</li>
       <li>A monthly count of Inka AI questions used (for usage limit enforcement only)</li>
     </ul>
 
@@ -184,7 +186,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>We do not connect to your bank accounts or financial institutions</li>
       <li>We do not collect payment card numbers or banking credentials</li>
       <li>We do not access your contacts, microphone, or GPS location</li>
-      <li>We do not send raw transactions, account numbers, or personal identifiers to AI services</li>
+      <li>For Inka AI: we send only aggregated, anonymised summaries — never raw transactions, account numbers, or personal identifiers (see Section 4A)</li>
+      <li>For PDF Import: we send extracted merchant names and amounts to classify transactions — never the PDF file itself, banking credentials, or account numbers (see Section 4B)</li>
       <li>We do not collect camera data except receipt photos you explicitly choose to attach</li>
     </ul>
   </div>
@@ -244,8 +247,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h3>Cloud Infrastructure</h3>
     <p>Database hosting, authentication, and file storage. Your financial data is stored on secure servers with strict access controls and data isolation policies ensuring only you can access your data.</p>
 
-    <h3>Anthropic</h3>
-    <p>AI processing for the Inka AI assistant feature. Only aggregated, anonymised financial summaries are shared — never raw data or personal identifiers. See Section 4A for full details.</p>
+    <h3>Google (Gemini AI)</h3>
+    <p>AI processing for the Inka AI assistant and PDF bank statement import features. Only aggregated, anonymised financial summaries and extracted transaction text are shared — never raw data or personal identifiers. See Sections 4A and 4B for full details.</p>
 
     <h3>RevenueCat</h3>
     <p>Subscription management and in-app purchase processing for <span style="color:#2563eb">Inka</span>pify Pro. Only your anonymous user ID and subscription status are shared. RevenueCat never receives your financial data.</p>
@@ -266,9 +269,9 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <!-- 4A -->
   <div class="section" id="inka-ai">
     <h2><span class="num">4A</span> Inka AI — How Your Data Is Used</h2>
-    <p><span style="color:#2563eb">Inka</span>pify includes an AI-powered assistant called Inka, powered by Anthropic's Claude API. This section explains exactly what data is shared with Anthropic when you use Inka AI.</p>
+    <p><span style="color:#2563eb">Inka</span>pify includes an AI-powered assistant called Inka, powered by Google's Gemini AI. This section explains exactly what data is shared with Google when you use Inka AI.</p>
 
-    <h3>What We Send to Anthropic</h3>
+    <h3>What We Send to Google's Gemini AI</h3>
     <p>When you ask Inka a question, we send only aggregated, anonymised financial summaries — never your raw data or personal identifiers. Specifically:</p>
     <ul class="hl-green">
       <li>Total income and expenses for the current month (single numbers only)</li>
@@ -281,7 +284,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>Your question and the last 8 messages of the current conversation</li>
     </ul>
 
-    <h3>What We Never Send to Anthropic</h3>
+    <h3>What We Never Send to Google's Gemini AI</h3>
     <ul class="hl-red">
       <li>Your name, email address, or any personal identifiers</li>
       <li>Raw transaction records, notes, or receipt images</li>
@@ -299,16 +302,74 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h3>Usage Limits</h3>
     <p>Inka AI questions are subject to monthly usage limits based on your subscription tier: 15 questions/month on the free plan, 200 questions/month on Pro. Your usage count is tracked server-side and reset on the 1st of each month.</p>
 
-    <h3>Anthropic's Data Practices</h3>
-    <p>Anthropic may process the aggregated summaries we send in accordance with their privacy policy. We have configured our API usage to opt out of Anthropic using our data for model training where this option is available. See <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a> for full details.</p>
+    <h3>Google's Data Practices</h3>
+    <p>Google processes the aggregated summaries we send via the Gemini API in accordance with their privacy policy. We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for full details.</p>
 
     <h3>Opting Out</h3>
-    <p>Inka AI is fully optional. If you prefer not to use it, simply do not open the Inka AI screen. Your financial data is never sent to Anthropic unless you actively ask Inka a question.</p>
+    <p>Inka AI is fully optional. If you prefer not to use it, simply do not open the Inka AI screen. Your financial data is never sent to Google's Gemini AI unless you actively ask Inka a question.</p>
   </div>
 
   <!-- 4B -->
+  <div class="section" id="pdf-import">
+    <h2><span class="num">4B</span> PDF Import — How Your Data Is Used</h2>
+    <p><span style="color:#2563eb">Inka</span>pify includes a PDF bank statement import feature (Pro plan only) that uses AI to classify your transactions. This section explains exactly what happens to your data when you use this feature.</p>
+
+    <h3>How It Works</h3>
+    <p>When you import a bank statement PDF, the file is processed in three stages entirely on our secure servers:</p>
+    <ol>
+      <li><strong>Text extraction</strong> — The PDF is read by our server using a local PDF library (pdfjs). No AI is involved at this stage and the PDF never leaves our infrastructure.</li>
+      <li><strong>Local matching</strong> — Extracted transactions are matched against your own past transaction history entirely on our servers. If all transactions match, no AI is used at all.</li>
+      <li><strong>AI classification</strong> — Only unmatched transactions are sent to Google's Gemini AI as plain text rows (merchant name, date, amount) for category classification.</li>
+    </ol>
+
+    <h3>What Is Sent to Google's Gemini AI</h3>
+    <ul>
+      <li>Extracted transaction descriptions (e.g. merchant names), dates, and amounts — for unmatched rows only</li>
+      <li>Your category list (category names only — no amounts or personal data)</li>
+      <li>Anonymised examples from your past transactions to improve matching accuracy</li>
+    </ul>
+
+    <h3>What Is Never Sent to Google's Gemini AI</h3>
+    <ul class="hl-green">
+      <li>The PDF file itself — it never leaves our servers</li>
+      <li>Your bank account numbers or account holder name</li>
+      <li>Banking credentials, passwords, or login information</li>
+      <li>Your name, email address, or any personal identifiers</li>
+    </ul>
+
+    <h3>Training Opt-Out</h3>
+    <p>We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a> for Google's data practices.</p>
+
+    <h3>Opting Out</h3>
+    <p>PDF import is entirely optional and only activates when you explicitly select a PDF file and confirm the import. The PDF file is not stored by <span style="color:#2563eb">Inka</span>pify after processing completes. If you prefer not to use it, use manual entry or CSV import instead.</p>
+  </div>
+
+  <!-- 4C -->
+  <div class="section" id="receipt-scan">
+    <h2><span class="num">4C</span> Receipt Scan — How Your Data Is Used</h2>
+    <p>When you use the Receipt Scan feature (Pro plan only), your receipt photo is sent to <strong>Google's Gemini AI API</strong> to extract transaction details — specifically: merchant name, total amount, date, and optionally the last 4 digits of a payment card if visible on the receipt.</p>
+
+    <h3>What is Shared</h3>
+    <ul>
+      <li>The compressed receipt image (JPEG) is transmitted over an encrypted connection (TLS) to Google's Gemini API</li>
+      <li>Only structured data extracted from the receipt is returned to the app and stored as a normal transaction record</li>
+      <li>Card last 4 digits (if extracted) are used only to pre-select your account in the app and are not stored separately</li>
+    </ul>
+
+    <h3>What Is NOT Shared or Stored</h3>
+    <ul>
+      <li>The receipt image is <strong>never stored</strong> on our servers or in Google's systems — it is discarded immediately after extraction</li>
+      <li>Full card or account numbers are never extracted or transmitted — only the last 4 digits if visible</li>
+      <li>We operate on Google's paid API plan, under which <strong>Google does not use your data to train AI models</strong></li>
+    </ul>
+
+    <h3>Opt-Out</h3>
+    <p>Receipt scanning is entirely optional and only activates when you explicitly tap "Scan Receipt" and confirm the consent screen. Manual transaction entry is always available as an alternative. You can revoke consent at any time by going to <em>Settings → Import → Reset Receipt Scan Consent</em>.</p>
+  </div>
+
+  <!-- 4D -->
   <div class="section" id="subscriptions">
-    <h2><span class="num">4B</span> Subscriptions &amp; Donations</h2>
+    <h2><span class="num">4D</span> Subscriptions &amp; Donations</h2>
     <p>When you subscribe to <span style="color:#2563eb">Inka</span>pify Pro or make a donation through the app, the following applies:</p>
 
     <h3>Payment Processing</h3>
