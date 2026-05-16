@@ -4,6 +4,19 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Privacy Policy — Inkapify</title>
+<meta name="description" content="Read Inkapify's Privacy Policy. Learn how we protect your financial data with AES-256 encryption, row-level security, and strict privacy-first data handling. No bank connections ever."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://inkapify.com/privacy"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://inkapify.com/privacy"/>
+<meta property="og:title" content="Privacy Policy — Inkapify"/>
+<meta property="og:description" content="Read Inkapify's Privacy Policy. Learn how we protect your financial data with AES-256 encryption, row-level security, and strict privacy-first data handling. No bank connections ever."/>
+<meta property="og:image" content="https://inkapify.com/og-image.png"/>
+<meta property="og:site_name" content="Inkapify"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Privacy Policy — Inkapify"/>
+<meta name="twitter:description" content="Read Inkapify's Privacy Policy. Learn how we protect your financial data with AES-256 encryption, row-level security, and strict privacy-first data handling. No bank connections ever."/>
+<meta name="twitter:image" content="https://inkapify.com/og-image.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -101,6 +114,19 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   .foot-links{justify-content:center}
   .nav-right .nav-link{display:none}
 }
+/* ── MOBILE NAV ── */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;-webkit-tap-highlight-color:transparent;margin-left:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);margin:5px 0;transition:all .25s cubic-bezier(.4,0,.2,1);border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);z-index:99;padding:12px 24px 20px;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,.1)}
+.mobile-nav a{font-size:15px;color:var(--text);padding:13px 8px;border-bottom:1px solid rgba(226,232,240,.8);text-decoration:none;display:block;transition:color .15s}
+.mobile-nav a:hover{color:var(--blue)}
+.mobile-nav .mnav-cta{margin-top:8px;background:var(--navy);color:#fff;text-align:center;padding:14px;border-radius:10px;border-bottom:none;font-weight:500;cursor:pointer}
+.mobile-nav .mnav-cta:hover{background:var(--navy2);color:#fff}
+.mobile-nav.open{display:flex}
+@media(max-width:768px){.hamburger{display:block}}
 </style>
 </head>
 <body>
@@ -112,8 +138,18 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <a href="/" class="nav-link">Home</a>
     <a href="/contact" class="nav-link">Contact</a>
     <a href="#" class="nav-cta" onclick="window.location.href=(/iPhone|iPad|iPod/i.test(navigator.userAgent)?'https://apps.apple.com/app/inkapify/id6766141937':'https://play.google.com/store/apps/details?id=com.inkapify.app');return false;">Download Free</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/#features">Features</a>
+  <a href="/#pricing">Pricing</a>
+  <a href="/contact">Contact</a>
+  <a href="#" class="mnav-cta" onclick="window.location.href=(/iPhone|iPad|iPod/i.test(navigator.userAgent)?'https://apps.apple.com/app/inkapify/id6766141937':'https://play.google.com/store/apps/details?id=com.inkapify.app');return false;">Download Free</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -471,5 +507,20 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <div class="foot-copy">© 2026 Inkapify. All rights reserved.</div>
 </footer>
 
+<script>
+// Hamburger menu
+const hbg = document.getElementById('hamburger');
+const mnav = document.getElementById('mobile-nav');
+if (hbg && mnav) {
+  hbg.addEventListener('click', () => {
+    const open = mnav.classList.toggle('open');
+    hbg.classList.toggle('open', open);
+    hbg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  mnav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { mnav.classList.remove('open'); hbg.classList.remove('open'); });
+  });
+}
+</script>
 </body>
 </html>
