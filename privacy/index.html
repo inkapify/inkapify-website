@@ -157,7 +157,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
   </div>
   <h1>Privacy Policy</h1>
-  <div class="hero-date">Effective Date: April 19, 2026 &nbsp;·&nbsp; <span style="color:#2563eb">Inka</span>pify v1.0</div>
+  <div class="hero-date">Effective Date: June 3, 2026</div>
 </div>
 
 <div class="wrap">
@@ -211,7 +211,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
 
     <h3>Inka AI Conversation Data</h3>
     <ul>
-      <li>Questions you ask Inka AI and Inka's responses (session-only — deleted when you close the screen)</li>
+      <li>Questions you ask Inka AI and Inka's responses (stored locally on your device for 24 hours, then automatically cleared)</li>
       <li>Aggregated financial summaries sent to Google's Gemini API to generate responses (see Section 4A)</li>
       <li>A monthly count of Inka AI questions used (for usage limit enforcement only)</li>
     </ul>
@@ -275,11 +275,11 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h2><span class="num">4</span> Data Sharing &amp; Third Parties</h2>
     <p>We do not sell, trade, or rent your personal information. We share limited data only with the following trusted service providers necessary to run the app:</p>
 
-    <h3>AI Processing (Cloudflare Workers)</h3>
-    <p>Our AI features (Inka AI and PDF import) run through Cloudflare Workers. Only the minimum data needed to answer your question or classify your transactions is sent — no financial history, account details, or personal identifiers.</p>
+    <h3>Cloudflare</h3>
+    <p>Our AI features (Inka AI, PDF import, and receipt scan) are routed through Cloudflare's infrastructure. Only the minimum data needed to process your request is transmitted — no raw financial history, account details, or personal identifiers.</p>
 
     <h3>Google (Gemini AI)</h3>
-    <p>AI processing for the Inka AI assistant and PDF bank statement import features. Only aggregated, anonymised financial summaries and extracted transaction text are shared — never raw data or personal identifiers. See Sections 4A and 4B for full details.</p>
+    <p>AI processing for Inka AI, PDF bank statement import, and receipt scan features. For Inka AI and PDF import, only aggregated summaries and extracted transaction text are shared. For receipt scan, the receipt image itself is sent directly to Google's Gemini AI for data extraction. Never raw transaction records or personal identifiers. See Sections 4A, 4B, and 4C for full details.</p>
 
     <h3>RevenueCat</h3>
     <p>Subscription management and in-app purchase processing for <span style="color:#2563eb">Inka</span>pify Pro. Only your anonymous user ID and subscription status are shared. RevenueCat never receives your financial data.</p>
@@ -395,7 +395,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     </ul>
 
     <h3>Opt-Out</h3>
-    <p>Receipt scanning is entirely optional and only activates when you explicitly tap "Scan Receipt" and confirm the consent screen. Manual transaction entry is always available as an alternative. You can revoke consent at any time by going to <em>Settings → Import → Reset Receipt Scan Consent</em>.</p>
+    <p>Receipt scanning is entirely optional and only activates when you explicitly tap "Scan Receipt" and confirm the consent screen. Manual transaction entry is always available as an alternative. Simply do not use the Receipt Scan feature if you prefer not to share images with Google's Gemini AI.</p>
   </div>
 
   <!-- 4D -->
@@ -413,7 +413,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <ul>
       <li>Your subscription tier (free, pro, beta)</li>
       <li>Subscription expiry date (for active Pro subscribers)</li>
-      <li>RevenueCat customer ID (anonymous identifier for webhook matching)</li>
+      <li>RevenueCat customer ID (anonymous identifier for subscription management)</li>
     </ul>
 
     <h3>Donations</h3>
@@ -430,7 +430,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>Inka AI usage counts are stored locally and reset on the 1st of each month</li>
       <li>To delete all your data: open the app → <strong>Profile → Factory Reset</strong>. This permanently deletes all financial data, settings, and receipts stored on your device immediately</li>
       <li>Receipt photos are stored locally on your device and are deleted when you remove them or reset the app</li>
-      <li>Anonymised, aggregated usage statistics may be retained as they cannot be linked back to you</li>
+      <li>Crash reports and error logs may be retained for debugging purposes — these cannot be linked back to your financial data</li>
     </ul>
   </div>
 
@@ -441,11 +441,12 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li><strong>Access</strong> — view all your financial data within the app at any time</li>
       <li><strong>Correction</strong> — edit or update any information you have entered</li>
       <li><strong>Deletion</strong> — delete individual records or reset all data from within the app at any time</li>
+      <li><strong>Backup</strong> — create an encrypted backup file of all your data from <strong>Profile → Backup &amp; Restore</strong></li>
       <li><strong>Export</strong> — export your transaction data to CSV from within the app</li>
       <li><strong>Notifications</strong> — enable or disable push notifications in device settings or within the app</li>
       <li><strong>Inka AI opt-out</strong> — simply do not use the Inka AI screen</li>
     </ul>
-    <p>To exercise any of these rights or to request account deletion, contact us via our <a href="https://inkapify.com/contact">Contact page</a>.</p>
+    <p>Since all your data is stored only on your device, you can exercise all of these rights directly within the app — no need to contact us. For any questions or concerns, reach us via our <a href="https://inkapify.com/contact">Contact page</a>.</p>
   </div>
 
   <!-- 7 -->
@@ -464,7 +465,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <!-- 8 -->
   <div class="section" id="children">
     <h2><span class="num">8</span> Children's Privacy</h2>
-    <p><span style="color:#2563eb">Inka</span>pify is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe your child has provided us with personal information, please contact us via our <a href="https://inkapify.com/contact">Contact page</a> and we will delete it promptly.</p>
+    <p><span style="color:#2563eb">Inka</span>pify is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. All financial data entered into the app is stored only on the device — we never receive it. A parent or guardian can remove all data immediately by opening <strong>Profile → Factory Reset</strong>.</p>
   </div>
 
   <!-- 9 -->
