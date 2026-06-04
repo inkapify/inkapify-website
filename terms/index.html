@@ -131,7 +131,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <div class="nav-right">
     <a href="/" class="nav-link">Home</a>
     <a href="/contact" class="nav-link">Contact</a>
-    <a href="#" class="nav-cta" onclick="window.location.href=(/iPhone|iPad|iPod/i.test(navigator.userAgent)?'https://apps.apple.com/app/inkapify/id6766141937':'https://play.google.com/store/apps/details?id=com.inkapify.app');return false;">Download Free</a>
+    <a href="#" class="nav-cta" onclick="var ua=navigator.userAgent;window.location.href=(/iPhone|iPad|iPod/i.test(ua)?'https://apps.apple.com/app/inkapify/id6766141937':/Android/i.test(ua)?'https://play.google.com/store/apps/details?id=com.inkapify.app':'https://inkapify.com/#download');return false;">Download Free</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -142,7 +142,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <a href="/#features">Features</a>
   <a href="/#pricing">Pricing</a>
   <a href="/contact">Contact</a>
-  <a href="#" class="mnav-cta" onclick="window.location.href=(/iPhone|iPad|iPod/i.test(navigator.userAgent)?'https://apps.apple.com/app/inkapify/id6766141937':'https://play.google.com/store/apps/details?id=com.inkapify.app');return false;">Download Free</a>
+  <a href="#" class="mnav-cta" onclick="var ua=navigator.userAgent;window.location.href=(/iPhone|iPad|iPod/i.test(ua)?'https://apps.apple.com/app/inkapify/id6766141937':/Android/i.test(ua)?'https://play.google.com/store/apps/details?id=com.inkapify.app':'https://inkapify.com/#download');return false;">Download Free</a>
 </div>
 
 <!-- HERO -->
