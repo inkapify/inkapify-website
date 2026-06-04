@@ -152,6 +152,11 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
 .mobile-nav .mnav-cta:hover{background:var(--navy2);color:#fff}
 .mobile-nav.open{display:flex}
 @media(max-width:768px){.hamburger{display:block}}
+
+/* Platform-aware visibility */
+.donate-desktop-only { display: none !important; }
+html.platform-desktop .donate-mobile-only { display: none !important; }
+html.platform-desktop .donate-desktop-only { display: flex !important; }
 </style>
 </head>
 <body>
@@ -174,7 +179,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <a href="/#features">Features</a>
   <a href="/#pricing">Pricing</a>
   <a href="/contact">Contact</a>
-  <a href="#" class="mnav-cta" onclick="window.location.href=(/iPhone|iPad|iPod/i.test(navigator.userAgent)?'https://apps.apple.com/app/inkapify/id6766141937':'https://play.google.com/store/apps/details?id=com.inkapify.app');return false;">Download Free</a>
+  <a href="#" class="mnav-cta" onclick="var ua=navigator.userAgent;window.location.href=(/iPhone|iPad|iPod/i.test(ua)?'https://apps.apple.com/app/inkapify/id6766141937':/Android/i.test(ua)?'https://play.google.com/store/apps/details?id=com.inkapify.app':'https://inkapify.com/#download');return false;">Download Free</a>
 </div>
 
 <!-- HERO -->
@@ -262,14 +267,26 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
 
     <div class="donate-note">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-      <p>One-time payment via Google Play. <strong>No subscription, no recurring charge.</strong> You can donate again anytime — no restrictions.</p>
+      <p id="donate-note-text">One-time payment via Google Play. <strong>No subscription, no recurring charge.</strong> You can donate again anytime — no restrictions.</p>
     </div>
 
-    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="btn-donate" id="donate-btn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      Donate $9.99 via App
-    </a>
-    <p class="btn-note">Opens in <span style="color:#2563eb">Inka</span>pify app · Secure Google Play billing · 100% goes to development</p>
+    <div id="donate-btn-container">
+      <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="btn-donate donate-mobile-only" id="donate-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Donate $9.99 via App
+      </a>
+      <div class="donate-desktop-only" style="gap:10px">
+        <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="btn-donate" id="donate-btn-android" style="flex:1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate $9.99 · Google Play
+        </a>
+        <a href="https://apps.apple.com/app/inkapify/id6766141937" class="btn-donate" id="donate-btn-ios" style="flex:1;background:#1a1a2e">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Donate $9.99 · App Store
+        </a>
+      </div>
+    </div>
+    <p class="btn-note" id="btn-note">Opens in <span style="color:#2563eb">Inka</span>pify app · Secure Google Play billing · 100% goes to development</p>
   </div>
 
   <!-- PROMISE -->
@@ -316,21 +333,31 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is the donation processed? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Donations are processed securely through Google Play billing — the same trusted system used for all app purchases. Your payment details are never stored by <span style="color:#2563eb">Inka</span>pify.</div>
+      <div class="faq-a">Donations are processed securely through App Store or Google Play billing — the same trusted system used for all app purchases. Your payment details are never stored by <span style="color:#2563eb">Inka</span>pify.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will I get a receipt? <span class="faq-arrow">+</span></div>
-      <div class="faq-a">Yes — Google Play sends an email receipt to your Gmail address after every purchase, just like any other Google Play transaction.</div>
+      <div class="faq-a">Yes — App Store or Google Play sends an email receipt to the address linked to your account after every purchase.</div>
     </div>
   </div>
 
   <!-- FINAL CTA -->
   <div style="text-align:center;padding:8px 0 0" class="reveal">
     <p style="font-size:15px;color:var(--text2);margin-bottom:20px;line-height:1.7">Not ready to donate? That's completely fine.<br/>Using the app and sharing it with friends helps just as much.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M20 18H4"/></svg>
-      Download <span style="color:#2563eb">Inka</span>pify Free
-    </a>
+    <div id="download-cta-container" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+      <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="donate-mobile-only" id="download-cta" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M20 18H4"/></svg>
+        Download <span style="color:#2563eb">Inka</span>pify Free
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.inkapify.app" class="donate-desktop-only" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M20 18H4"/></svg>
+        Google Play — Free
+      </a>
+      <a href="https://apps.apple.com/app/inkapify/id6766141937" class="donate-desktop-only" style="display:inline-flex;align-items:center;gap:6px;background:#1a1a2e;color:#fff;padding:13px 28px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;transition:all .2s">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16l-4-4h3V4h2v8h3l-4 4z"/><path d="M20 18H4"/></svg>
+        App Store — Free
+      </a>
+    </div>
   </div>
 
 </div>
@@ -350,6 +377,39 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
 </footer>
 
 <script>
+var GPLAY = 'https://play.google.com/store/apps/details?id=com.inkapify.app';
+var ASTORE = 'https://apps.apple.com/app/inkapify/id6766141937';
+var HEART_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+
+// Platform detection
+;(function() {
+  var ua = navigator.userAgent;
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isAndroid = /Android/i.test(ua);
+
+  if (isIOS) {
+    document.documentElement.classList.add('platform-ios');
+    var btn = document.getElementById('donate-btn');
+    if (btn) btn.href = ASTORE;
+    var dlCta = document.getElementById('download-cta');
+    if (dlCta) dlCta.href = ASTORE;
+    var noteText = document.getElementById('donate-note-text');
+    if (noteText) noteText.innerHTML = 'One-time payment via App Store. <strong>No subscription, no recurring charge.</strong> You can donate again anytime — no restrictions.';
+    var btnNote = document.getElementById('btn-note');
+    if (btnNote) btnNote.innerHTML = 'Opens in <span style="color:#2563eb">Inka</span>pify app \xb7 Secure App Store billing \xb7 100% goes to development';
+  } else if (isAndroid) {
+    document.documentElement.classList.add('platform-android');
+    // Already Google Play — no changes needed
+  } else {
+    // Desktop: show both buttons
+    document.documentElement.classList.add('platform-desktop');
+    var noteText = document.getElementById('donate-note-text');
+    if (noteText) noteText.innerHTML = 'One-time payment via App Store or Google Play. <strong>No subscription, no recurring charge.</strong> You can donate again anytime — no restrictions.';
+    var btnNote = document.getElementById('btn-note');
+    if (btnNote) btnNote.innerHTML = 'Opens in <span style="color:#2563eb">Inka</span>pify app \xb7 Secure App Store / Google Play billing \xb7 100% goes to development';
+  }
+})();
+
 // Hamburger menu
 const hbg = document.getElementById('hamburger');
 const mnav = document.getElementById('mobile-nav');
@@ -372,8 +432,14 @@ function select(el, amt, id) {
   el.classList.add('selected')
   selectedAmt = amt
   selectedId  = id
+  // Update single mobile button
   const btn = document.getElementById('donate-btn')
-  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Donate ${amt} via App`
+  if (btn) btn.innerHTML = HEART_SVG + 'Donate ' + amt + ' via App'
+  // Update desktop buttons
+  const btnA = document.getElementById('donate-btn-android')
+  if (btnA) btnA.innerHTML = HEART_SVG + 'Donate ' + amt + ' \xb7 Google Play'
+  const btnI = document.getElementById('donate-btn-ios')
+  if (btnI) btnI.innerHTML = HEART_SVG + 'Donate ' + amt + ' \xb7 App Store'
 }
 
 const obs = new IntersectionObserver((entries) => {
