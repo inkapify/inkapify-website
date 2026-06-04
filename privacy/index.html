@@ -193,7 +193,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
 
     <h3>Information You Provide</h3>
     <ul>
-      <li>Account details: name, email address, and password when you register</li>
+      <li>No account or registration required. The app works straight out of the box.</li>
       <li>Financial data: income, expenses, transactions, budgets, goals, and debt records you enter</li>
       <li>Categories, tags, and payees you create to organise your transactions</li>
       <li>Recurring rules, reminders, and bill schedules you configure</li>
@@ -234,7 +234,6 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <p>We use the information we collect only to:</p>
     <ul>
       <li>Provide, operate, and maintain the <span style="color:#2563eb">Inka</span>pify app and all its features</li>
-      <li>Sync your financial data securely across your devices</li>
       <li>Send push notifications for reminders and alerts you have configured</li>
       <li>Enforce Inka AI monthly usage limits per your subscription tier</li>
       <li>Process and verify your subscription status via RevenueCat</li>
@@ -252,27 +251,24 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <!-- 3 -->
   <div class="section" id="storage">
     <h2><span class="num">3</span> Data Storage &amp; Security</h2>
-    <p>Your data is stored in two places: <strong>locally on your device</strong> using an on-device database, and <strong>in the cloud</strong> on our secure servers. All cloud data is encrypted in transit using TLS/SSL and encrypted at rest using AES-256.</p>
+    <p>All your data is stored only on your device. Nothing is sent to our servers.</p>
 
-    <h3>Offline-First Architecture</h3>
-    <p><span style="color:#2563eb">Inka</span>pify is designed to work fully offline. Your financial data is saved to your device first and accessible at all times without an internet connection. When connectivity is available, changes are automatically synced to our cloud servers within seconds. This means your data is always available regardless of network status.</p>
+    <h3>On-Device Storage</h3>
     <div class="hl-green">
-      <li>Data saved locally first — available offline at all times</li>
-      <li>Automatic cloud backup when online — no manual action required</li>
-      <li>Receipt photo uploads require internet; all other features work offline</li>
+      <li>All financial data lives only on your device — never on our servers</li>
+      <li>Works fully offline — no internet required for any core feature</li>
+      <li>Back up your data at any time by creating an encrypted backup file from the app</li>
     </div>
 
     <h3>Security Measures</h3>
     <p>Our security measures include:</p>
     <ul>
-      <li>Row-level security policies — you can only ever access your own data</li>
-      <li>Encrypted database connections for all server communications</li>
-      <li>Secure authentication with hashed passwords (never stored in plain text)</li>
+      <li>App data stored in your device's secure local storage — not accessible to other apps</li>
       <li>Optional App Lock using device PIN, fingerprint, or Face ID</li>
-      <li>JWT tokens stored in device secure storage (not accessible to other apps)</li>
+      <li>Encrypted backup files — only you hold the password</li>
       <li>Regular security monitoring, audits, and updates</li>
     </ul>
-    <p>While we implement strong security measures, no method of electronic storage or transmission is 100% secure. We are committed to protecting your data to the best of our ability. If device storage is wiped before a sync completes, locally unsaved changes may be lost — we recommend using the CSV export feature as a regular backup.</p>
+    <p>While we implement strong security measures, no method of electronic storage is 100% secure. We recommend creating regular backup files from within the app to protect against accidental data loss.</p>
   </div>
 
   <!-- 4 -->
@@ -280,8 +276,8 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <h2><span class="num">4</span> Data Sharing &amp; Third Parties</h2>
     <p>We do not sell, trade, or rent your personal information. We share limited data only with the following trusted service providers necessary to run the app:</p>
 
-    <h3>Cloud Infrastructure</h3>
-    <p>Database hosting, authentication, and file storage. Your financial data is stored on secure servers with strict access controls and data isolation policies ensuring only you can access your data.</p>
+    <h3>AI Processing (Cloudflare Workers)</h3>
+    <p>Our AI features (Inka AI and PDF import) run through Cloudflare Workers. Only the minimum data needed to answer your question or classify your transactions is sent — no financial history, account details, or personal identifiers.</p>
 
     <h3>Google (Gemini AI)</h3>
     <p>AI processing for the Inka AI assistant and PDF bank statement import features. Only aggregated, anonymised financial summaries and extracted transaction text are shared — never raw data or personal identifiers. See Sections 4A and 4B for full details.</p>
@@ -333,10 +329,10 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     </ul>
 
     <h3>Conversation Storage</h3>
-    <p>Inka AI conversations are <strong>session-only</strong>. Your conversation is temporarily stored while the Inka screen is open. When you close the Inka screen, your conversation is permanently deleted from our servers. Conversations do not persist between sessions.</p>
+    <p>Inka AI conversations are stored <strong>only on your device</strong> using local storage. Conversations are retained for 24 hours to provide context continuity, after which they are automatically cleared. No conversation history is ever stored on our servers.</p>
 
     <h3>Usage Limits</h3>
-    <p>Inka AI questions are subject to monthly usage limits based on your subscription tier: 15 questions/month on the free plan, 200 questions/month on Pro. Your usage count is tracked server-side and reset on the 1st of each month.</p>
+    <p>Inka AI questions are subject to monthly usage limits based on your subscription tier: 15 questions/month on the free plan, 200 questions/month on Pro. Your usage count is tracked <strong>locally on your device</strong> and resets on the 1st of each month.</p>
 
     <h3>Google's Data Practices</h3>
     <p>Google processes the aggregated summaries we send via the Gemini API in accordance with their privacy policy. We use the Gemini API on a paid plan, under which Google does not use your data to train their AI models. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank">Google Gemini API Terms</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for full details.</p>
@@ -429,12 +425,12 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
   <div class="section" id="retention">
     <h2><span class="num">5</span> Data Retention</h2>
     <ul>
-      <li>Your financial records are retained while your account is active</li>
+      <li>Your financial records are stored only on your device for as long as you keep the app installed</li>
       <li>Deleted records are removed from your visible data immediately</li>
-      <li>Inka AI conversations are deleted permanently when you close the Inka screen</li>
-      <li>Inka AI usage counts are retained for up to 13 months for monthly limit calculations, then deleted</li>
-      <li>When you delete your account, all personal data is permanently deleted from our servers within 30 days</li>
-      <li>Receipt photos stored in our file storage are deleted when you remove them or delete your account</li>
+      <li>Inka AI conversations are stored locally on your device and automatically cleared after 24 hours</li>
+      <li>Inka AI usage counts are stored locally and reset on the 1st of each month</li>
+      <li>To delete all your data: open the app → <strong>Profile → Factory Reset</strong>. This permanently deletes all financial data, settings, and receipts stored on your device immediately</li>
+      <li>Receipt photos are stored locally on your device and are deleted when you remove them or reset the app</li>
       <li>Anonymised, aggregated usage statistics may be retained as they cannot be linked back to you</li>
     </ul>
   </div>
@@ -445,7 +441,7 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <ul>
       <li><strong>Access</strong> — view all your financial data within the app at any time</li>
       <li><strong>Correction</strong> — edit or update any information you have entered</li>
-      <li><strong>Deletion</strong> — delete individual records, reset all data, or delete your entire account</li>
+      <li><strong>Deletion</strong> — delete individual records or reset all data from within the app at any time</li>
       <li><strong>Export</strong> — export your transaction data to CSV from within the app</li>
       <li><strong>Notifications</strong> — enable or disable push notifications in device settings or within the app</li>
       <li><strong>Inka AI opt-out</strong> — simply do not use the Inka AI screen</li>
