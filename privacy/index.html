@@ -398,6 +398,70 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
     <p>Receipt scanning is entirely optional and only activates when you explicitly tap "Scan Receipt" and confirm the consent screen. Manual transaction entry is always available as an alternative. Simply do not use the Receipt Scan feature if you prefer not to share images with Google's Gemini AI.</p>
   </div>
 
+  <!-- 4E -->
+  <div class="section" id="google-drive">
+    <h2><span class="num">4E</span> Google Drive Backup (Android)</h2>
+    <p>On Android, <span style="color:#2563eb">Inka</span>pify offers an optional backup feature that saves your encrypted backup file to your personal Google Drive. This feature requires you to sign in with your Google account and grant permission. This section explains exactly what access is requested and how it is used.</p>
+
+    <h3>What Permission Is Requested</h3>
+    <p><span style="color:#2563eb">Inka</span>pify requests the <strong>Google Drive <code>drive.file</code> scope</strong>. This is the most limited Google Drive permission available. It grants access only to files that <span style="color:#2563eb">Inka</span>pify itself creates — the app cannot read, access, or modify any other files in your Google Drive.</p>
+
+    <h3>What We Store in Your Google Drive</h3>
+    <ul class="hl-green">
+      <li>A single encrypted backup file (<code>.inkbak</code>) in a folder named <strong>Inkapify Backups</strong> in your Google Drive</li>
+      <li>The backup file is encrypted with a password you choose — <span style="color:#2563eb">Inka</span>pify does not know or store your backup password</li>
+      <li>Only the backup files created by <span style="color:#2563eb">Inka</span>pify are accessible to the app — no other Drive content</li>
+    </ul>
+
+    <h3>What We Never Access</h3>
+    <ul class="hl-red">
+      <li>Any files in your Google Drive other than the backup files <span style="color:#2563eb">Inka</span>pify created</li>
+      <li>Your Google account profile, contacts, Gmail, or any other Google service</li>
+      <li>Your Google Drive storage quota or file listing beyond the Inkapify Backups folder</li>
+    </ul>
+
+    <h3>How the Backup File Is Used</h3>
+    <p>The backup file is written to your Google Drive and can be downloaded back to the app to restore your financial data. The file is encrypted before leaving your device — we cannot read its contents. Your Google Drive acts purely as personal cloud storage; <span style="color:#2563eb">Inka</span>pify's servers never receive or process the backup file.</p>
+
+    <h3>Revoking Access</h3>
+    <p>You can revoke <span style="color:#2563eb">Inka</span>pify's Google Drive access at any time from your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions page</a>. Revoking access only disables the Google Drive backup feature — all your financial data remains on your device and is not affected.</p>
+
+    <h3>Google's Data Practices</h3>
+    <p>File storage in Google Drive is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. <span style="color:#2563eb">Inka</span>pify does not share any financial data with Google through this integration — only the encrypted backup file (whose contents Google cannot read) is stored.</p>
+
+    <h3>This Feature Is Fully Optional</h3>
+    <p>Google Drive backup is opt-in and only activates when you explicitly tap "Connect Google Drive" in <strong>Profile → Backup &amp; Restore</strong>. If you do not enable this feature, no Google account connection or Drive access is requested.</p>
+  </div>
+
+  <!-- 4F -->
+  <div class="section" id="icloud">
+    <h2><span class="num">4F</span> iCloud Backup (iPhone)</h2>
+    <p>On iPhone, <span style="color:#2563eb">Inka</span>pify offers an optional backup feature that saves your encrypted backup file to your personal iCloud Drive. This feature only activates when you explicitly enable it and is governed entirely by your Apple ID and iCloud settings.</p>
+
+    <h3>What Is Stored in iCloud</h3>
+    <ul class="hl-green">
+      <li>A single encrypted backup file (<code>.inkbak</code>) stored in the app's private iCloud container</li>
+      <li>The backup file is encrypted with a password you choose — <span style="color:#2563eb">Inka</span>pify does not know or store your backup password</li>
+      <li>The file is only accessible by <span style="color:#2563eb">Inka</span>pify — no other apps or users can access it</li>
+    </ul>
+
+    <h3>What We Never Access</h3>
+    <ul class="hl-red">
+      <li>Any other files in your iCloud Drive or iCloud Photo Library</li>
+      <li>Your Apple ID, iCloud account details, or any other Apple services</li>
+      <li>iCloud storage quota or any files outside the app's private container</li>
+    </ul>
+
+    <h3>How It Works</h3>
+    <p>The backup file is encrypted on your device before being written to iCloud. <span style="color:#2563eb">Inka</span>pify's servers never receive or process the file — iCloud acts purely as personal cloud storage between your own devices. Apple handles iCloud storage in accordance with <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+
+    <h3>Disabling iCloud Backup</h3>
+    <p>You can disable iCloud backup at any time from <strong>Profile → Backup &amp; Restore</strong> within the app, or by revoking iCloud access for <span style="color:#2563eb">Inka</span>pify in your iPhone's Settings → [Your Name] → iCloud. Disabling only affects the backup feature — all your financial data on your device is unaffected.</p>
+
+    <h3>This Feature Is Fully Optional</h3>
+    <p>iCloud backup is opt-in and only activates when you explicitly enable it in <strong>Profile → Backup &amp; Restore</strong>. If you do not enable this feature, no iCloud access is requested.</p>
+  </div>
+
   <!-- 4D -->
   <div class="section" id="subscriptions">
     <h2><span class="num">4D</span> Subscriptions &amp; Donations</h2>
