@@ -685,8 +685,8 @@ html.platform-android .p-btn-app-store { display:none !important; }
     <div class="pcard pro">
       <div class="p-badge">MOST POPULAR</div>
       <div class="p-tier">Pro</div>
-      <div class="p-price">$4.99<sub>/mo</sub></div>
-      <div class="p-per">$39.99/year <span class="p-save">Save 33%</span></div>
+      <div class="p-price" id="pro-monthly-price">$4.99<sub>/mo</sub></div>
+      <div class="p-per" id="pro-annual-price">$39.99/year <span class="p-save">Save 33%</span></div>
       <div class="p-div"></div>
       <ul class="p-list">
         <li class="y">Everything in Free</li>
@@ -838,6 +838,18 @@ if (hbg && mnav) {
     });
   });
 }
+
+// India geo pricing
+fetch('https://inkapify-workers.inkapify.workers.dev/geo')
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (d.country !== 'IN') return;
+    var mp = document.getElementById('pro-monthly-price');
+    var ap = document.getElementById('pro-annual-price');
+    if (mp) mp.innerHTML = '&#8377;249<sub>/mo</sub>';
+    if (ap) ap.innerHTML = '&#8377;1,999/year <span class="p-save">Save 33%</span>';
+  })
+  .catch(function() {});
 
 // FAQ accordion arrow fix
 document.querySelectorAll('.fq').forEach(fq => {
