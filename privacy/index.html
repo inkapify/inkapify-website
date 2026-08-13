@@ -216,11 +216,20 @@ footer{border-top:1px solid var(--border);background:var(--white);padding:28px 4
       <li>A monthly count of Inka AI questions used (for usage limit enforcement only)</li>
     </ul>
 
+    <h3>Smart Clipboard Detection (Optional)</h3>
+    <ul>
+      <li>When you open the Add Transaction screen, the app may read your device clipboard to detect copied bank SMS messages or payment notifications</li>
+      <li>Clipboard content is processed entirely on your device — it is never sent to our servers or any third party</li>
+      <li>Only transaction-relevant fields are extracted (amount, date, payee name, last 4 digits of account) — all other clipboard content is discarded immediately</li>
+      <li>This feature is opt-in and can be disabled at any time under <strong>Settings → Import → Smart Detection</strong></li>
+    </ul>
+
     <h3>What We Do NOT Collect</h3>
     <ul class="hl-green">
       <li>We do not connect to your bank accounts or financial institutions</li>
       <li>We do not collect payment card numbers or banking credentials</li>
       <li>We do not access your contacts, microphone, or GPS location</li>
+      <li>Clipboard content is never stored, logged, or transmitted — it is read locally and discarded after extraction</li>
       <li>For Inka AI: we send only aggregated, anonymised summaries — never raw transactions, account numbers, or personal identifiers (see Section 4A)</li>
       <li>For PDF Import: we send extracted merchant names and amounts to classify transactions — never the PDF file itself, banking credentials, or account numbers (see Section 4B)</li>
       <li>We do not collect camera data except receipt photos you explicitly choose to attach</li>
