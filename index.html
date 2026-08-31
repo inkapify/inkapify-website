@@ -852,15 +852,26 @@ if (hbg && mnav) {
   });
 }
 
-// India geo pricing
+// Regional geo pricing
+var GEO_PRICES = {
+  'IN': { monthly: '&#8377;249<sub>/mo</sub>',        annual: '&#8377;1,999/year <span class="p-save">Save 33%</span>' },
+  'PH': { monthly: '&#8369;199<sub>/mo</sub>',        annual: '&#8369;1,599/year <span class="p-save">Save 33%</span>' },
+  'ID': { monthly: 'Rp49,000<sub>/mo</sub>',          annual: 'Rp399,000/year <span class="p-save">Save 32%</span>' },
+  'NG': { monthly: '&#8358;2,999<sub>/mo</sub>',      annual: '&#8358;24,999/year <span class="p-save">Save 30%</span>' },
+  'PK': { monthly: 'Rs699<sub>/mo</sub>',             annual: 'Rs5,999/year <span class="p-save">Save 28%</span>' },
+'VN': { monthly: '&#8363;79,000<sub>/mo</sub>',     annual: '&#8363;649,000/year <span class="p-save">Save 32%</span>' },
+  'KE': { monthly: 'KSh499<sub>/mo</sub>',            annual: 'KSh3,999/year <span class="p-save">Save 33%</span>' },
+  'MX': { monthly: '$79<sub>/mo</sub>',               annual: '$649/year <span class="p-save">Save 32%</span>' },
+};
 fetch('https://inkapify-workers.inkapify.workers.dev/geo')
   .then(function(r) { return r.json(); })
   .then(function(d) {
-    if (d.country !== 'IN') return;
+    var p = GEO_PRICES[d.country];
+    if (!p) return;
     var mp = document.getElementById('pro-monthly-price');
     var ap = document.getElementById('pro-annual-price');
-    if (mp) mp.innerHTML = '&#8377;249<sub>/mo</sub>';
-    if (ap) ap.innerHTML = '&#8377;1,999/year <span class="p-save">Save 33%</span>';
+    if (mp) mp.innerHTML = p.monthly;
+    if (ap) ap.innerHTML = p.annual;
   })
   .catch(function() {});
 
